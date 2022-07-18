@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            2.CSS选择器:用于“查找”（或选取）要设置样式的 HTML 元素。
+                2.4 CSS 伪元素用于设置元素指定部分的样式。
+                        例如，它可用于：
+                            设置元素的首字母、首行的样式
+                            在元素的内容之前或之后插入内容
+        */
+    </style>
+</head>
+<body>
+<!--
+    注意：::first-line 伪元素只能应用于块级元素。
+    以下属性适用于 ::first-line 伪元素：
+        字体属性
+        颜色属性
+        背景属性
+        word-spacing
+        letter-spacing
+        text-decoration
+        vertical-align
+        text-transform
+        line-height
+        clear
+    请注意双冒号表示法 - ::first-line 对比 :first-line
+    在 CSS3 中，双冒号取代了伪元素的单冒号表示法。这是 W3C 试图区分伪类和伪元素的尝试。
+    在 CSS2 和 CSS1 中，伪类和伪元素都使用了单冒号语法。为了向后兼容，CSS2 和 CSS1 伪元素可接受单冒号语法。
+ -->
+
+<style>
+    #num1
+    p::first-line {
+        color: #ff0000;
+        font-variant: small-caps;
+    }
+</style>
+<div id="num1">
+<p>您可以使用 ::first-line 伪元素将特殊效果添加到文本的第一行。一些更多的文字。越来越多，越来越多。</p>
+</div>
+<!--
+    注意：::first-letter 伪元素只适用于块级元素。
+    下面的属性适用于 ::first-letter 伪元素：
+        字体属性
+        颜色属性
+        背景属性
+        外边距属性
+        内边距属性
+        边框属性
+        text-decoration
+        vertical-align（仅当 "float" 为 "none"）
+        text-transform
+        line-height
+        float
+        clear
+ -->
+<style>
+    #num2
+    p::first-letter {
+        color: #ff0000;
+        font-size: xx-large;
+    }
+</style>
+<div id="num2">
+<p>您可以使用 ::first-letter 伪元素为文本的第一个字符添加特殊效果！</p>
+</div>
+
+<!--
+    伪元素可以与 CSS 类结合使用
+-->
+<style>
+    #num3
+    p.intro::first-letter {
+        color: #ff0000;
+        font-size: 200%;
+    }
+</style>
+<div id="num3">
+<p class="intro">这是一段简介！</p>
+<p>这是一段文字。以及更多的文字。</p>
+</div>
+
+<!--
+    组合多个伪元素
+ -->
+<style>
+    #num4
+    p::first-letter {
+        color: #ff0000;
+        font-size: xx-large;
+    }
+    #num4
+    p::first-line {
+        color: #0000ff;
+        font-variant: small-caps;
+    }
+</style>
+<div id="num4">
+    <p>您可以结合 ::first-letter 和 ::first-line 伪元素来为文本的首字母和首行添加特殊效果！</p>
+</div>
+<!--
+    ::before 伪元素可用于在元素内容之前插入一些内容。
+    下面的例子在每个 <h1> 元素的内容之前插入一幅图像
+ -->
+<style>
+    #num5
+    h1::before {
+        content: url(../../../logo.png);
+    }
+</style>
+<div id="num5">
+<h1>这是一个标题</h1>
+<p>::before 伪元素在一个元素的内容之前插入内容。</p>
+<h1>这是一个标题</h1>
+</div>
+<!--
+     ::after 伪元素可用于在元素内容之后插入一些内容。
+     下面的例子在每个 <h1> 元素的内容之后插入一幅图像
+     所有 CSS 伪元素
+    选择器	        例子	        例子描述
+    ::after	        p::after	    在每个 <p> 元素之后插入内容。
+    ::before	    p::before	    在每个 <p> 元素之前插入内容。
+    ::first-letter	p::first-letter	选择每个 <p> 元素的首字母。
+    ::first-line	p::first-line	选择每个 <p> 元素的首行。
+    ::selection	    p::selection	选择用户选择的元素部分。
+ -->
+<style>
+    #num6
+    h1::after {
+        content: url(../../../logo.png);
+    }
+</style>
+<div id="num6">
+<h1>这是一个标题</h1>
+<p>::after 伪元素在一个元素之后插入内容。</p>
+<h1>这是一个标题</h1>
+</div>
+
+<style>
+    #num7
+    ::-moz-selection { /* 针对 Firefox 的代码 */
+        color: red;
+        background: yellow;
+    }
+    #num7
+    ::selection {
+        color: red;
+        background: yellow;
+    }
+</style>
+<div id="num7">
+    <h1>请选择本页中的文本：</h1>
+    <p>这是一个段落。</p>
+    <div>这是 div 元素中的文本。</div>
+    <p><b>注释：</b>Firefox 支持可供替代的 ::-moz-selection 属性。</p>
+</div>
+
+</body>
+</html>

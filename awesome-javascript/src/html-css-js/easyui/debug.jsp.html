@@ -1,0 +1,834 @@
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.pactera.com/powerweb" prefix="p"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>可疑交易报告生成</title>
+    <p:include codeTypeIds="tptr,tosc,baosongFlag,sendFlag,pbstat"/>
+
+    <style type="text/css">
+        .datagrid-header .datagrid-cell span {
+            font-weight: bold;
+            text-align: center;
+        }
+
+
+        .datagrid-header td {
+            border-color: #ccc;
+            text-align: center;
+        }
+    </style>
+
+    <%Calendar cal = Calendar.getInstance();
+    /*int today = cal.getTime().getDay();//取得今天的星期值
+    if(today == cal.getFirstDayOfWeek()){//今天在这个星期中是否为第一天
+    cal.roll(Calendar.DAY_OF_YEAR, -3);
+    }else{
+    cal.roll(Calendar.DAY_OF_YEAR, -1);
+    }*/
+
+
+
+    SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+    String enddate=sdf.format(cal.getTime());
+
+    cal.setTime(new Date());
+    cal.add(Calendar.YEAR, -1);
+    Date y = cal.getTime();
+    String begindate = sdf.format(y);
+    /*cal.set(Calendar.MONTH, cal.get(Calendar.MONTH) - 1);
+    String begindate=sdf.format(cal.getTime());*/
+
+
+    %>
+</head>
+<body class="easyui-layout">
+<div style="height: 100%;" data-options="region:'north',border:false" style="padding: 1px;">
+    <form id="yyb_kyjy" action="<c:url value="/yybkyjy/yybkyjyxxcp.do?method=exportKyjyReportingCreate" />" method="post">
+    <table border="0" cellpadding="3" cellspacing="0" width="98%" align="center">
+        <tr>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>预警开始时间</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="yjBdate" name="yjBdate" class="easyui-datebox" validType="length[1,10]" value="<%=begindate%>" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>预警结束时间</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="yjEdate" name="yjEdate" class="easyui-datebox" validType="length[1,10]" value="<%=enddate%>" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>生成报文开始时间</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="bwBdate" name="bwBdate" class="easyui-datebox" validType="length[1,10]"  style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>分公司</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="glzbNo" name="glzbNo" class="easyui-combobox" style="width:280px"/></td>
+
+        </tr>
+
+
+        <tr>
+            <td nowrap="nowrap" width="1%" align="right"><label>审定开始时间</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="sdBdate" name="sdBdate" class="easyui-datebox" validType="length[1,10]" value="<%=begindate%>" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>审定结束时间</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="sdEdate" name="sdEdate" class="easyui-datebox" validType="length[1,10]" value="<%=enddate%>" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>生成报文结束时间</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="bwEdate" name="bwEdate" class="easyui-datebox" validType="length[1,10]"  style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>营业部</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="yybdm" name="yybdm" class="easyui-combobox" style="width:280px"/></td>
+
+
+        </tr>
+
+        <tr>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>涉及客户姓名</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="custName" name="custName" class="easyui-textbox" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>涉及客户号</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="custId" name="custId" class="easyui-textbox" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>涉及客户证件号</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="khzjhm" name="khzjhm" class="easyui-textbox" style="width:150px"/></td>
+
+            <td nowrap="nowrap" width="1%" align="right"><label>可疑交易任务编号</label></td>
+            <td nowrap="nowrap" width="1%" align="left"><input id="kyjybh" name="kyjybh" class="easyui-textbox" style="width:280px"/></td>
+
+
+
+        </tr>
+
+        <td nowrap="nowrap" width="1%" align="right"><label>是否已生成报文</label></td>
+        <td nowrap="nowrap" width="1%" align="left"><input id="isBw" name="isBw" class="easyui-combobox" style="width:150px"/></td>
+
+        <td nowrap="nowrap" width="1%" align="right"><label>集中分析处理人员(工号)</label></td>
+        <td nowrap="nowrap" width="1%" align="left"><input id="jzStaffNo" name="jzStaffNo" class="easyui-textbox" style="width:150px"/></td>
+
+        <td nowrap="nowrap" width="1%" align="right"><label>法律合规部处理人员(工号)</label></td>
+        <td nowrap="nowrap" width="1%" align="left"><input id="hgStaffNo" name="hgStaffNo" class="easyui-textbox" style="width:150px"/></td>
+
+        <td nowrap="nowrap" width="1%" align="right"><label>可疑交易特征</label></td>
+        <td nowrap="nowrap" width="1%" align="left" ><input id="kyjytz" name="kyjytz" class="easyui-combobox" editable="false"  style="width: 280px"/></td>
+
+        <td nowrap="nowrap" width="1%" align="right"><a class="easyui-linkbutton" href="javascript:void(0)" onclick="doSearchkh();" data-options="iconCls:'icon-search'">查询</a></td>
+        <td nowrap="nowrap" width="1%" align="left"><a class="easyui-linkbutton" href="javascript:void(0)" onclick="doResethk();" data-options="iconCls:'icon-reload'">重置</a></td>
+
+        <tr>
+
+        </tr>
+        <tr>
+
+
+        </tr>
+
+    </table>
+    </form>
+    <table id="Datagrid_yybky" data-options="iconCls:'icon-grid',title:'可疑交易事件列表'"></table>
+</div>
+<!-- 编辑框 -->
+<div id="Dialog_comp_data" modal="true" title="编辑" style="width: 1100px; height: 800px;" cache="false" closed="false"
+     data-options="">
+</div>
+<script type="text/javascript">
+    //弹出加载层
+    var Datagrid_yybky = $("#Datagrid_yybky");//定义变量,减少多次获取选择器
+    // 查询
+    $(function() {
+
+
+        //下拉框:可疑特征
+        $("#kyjytz").combobox({
+            prompt : '可进行多选',
+            url : '<c:url value="/kyjysglr/kyjysglr.do?method=getIdCombo&idictitem=1009" />',
+            valueField : "subitem",
+            textField : "subitemname",
+            editable : false,
+            multiple : true
+        });
+
+        /*//涉罪类型
+  $("#tosc11").combobox({
+    prompt : '可进行多选',
+    url : '<c:url value="/kyjysglr/kyjysglr.do?method=getIdCombo&idictitem=1010" />',
+    valueField : "subitem",
+    textField : "subitemname",
+    editable : false,
+    panelHeight : 300,
+    multiple : true
+  });*/
+
+        $("#glzbNo").combobox({
+            url : '<c:url value="/yybkyjy/yybkyjyxxcp.do?method=getOrgId" />',
+            valueField : "glzbNo",
+            textField : "glzbName",
+            editable : true,
+            panelHeight : 300
+        });
+
+        $('#isBw').combobox({
+            prompt : '',
+            data: [{
+                label: '是',
+                value: '1'
+            },{
+                label: '否',
+                value: '0'
+            }],
+            valueField : "value",
+            textField : "label",
+            editable : "true",
+            filter : function(q, row) {
+                var opts = $(this).combobox('options');
+                return row[opts.textField].indexOf(q) > -1;//将从头位置匹配改为任意匹配
+            },
+            onHidePanel : function() {
+                var valueField = $(this).combobox("options").valueField;
+                var val = $(this).combobox("getValue"); //当前combobox的值
+                var allData = $(this).combobox("getData"); //获取combobox所有数据
+                var result = true; //为true说明输入的值在下拉框数据中不存在
+                for (var i = 0; i < allData.length; i++) {
+                    if (val == allData[i][valueField]) {
+                        result = false;
+                    }
+                }
+                if (result) {
+                    $(this).combobox("clear");
+                }
+
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#glzbNo").combobox({
+            onChange: function (n,o) {
+                var td = $("#glzbNo").combobox("getValue");
+                if(td!=""){
+                    erfw(td);
+                }else{
+                    $("#yybdm").html("");
+                }
+            }
+        });
+    });
+
+    //营业部
+    function erfw(td){
+        $("#yybdm").combobox({
+            url : '<c:url value="/yybkyjy/yybkyjyxxcp.do?method=getyybdm&glzb_no='+td+'" />',
+            valueField : "yybdm",
+            textField : "jgjc",
+            editable : true,
+            panelHeight : 300
+        });
+    }
+
+
+    // 查询
+    function doSearchkh() {
+        var yjBdate = $("#yjBdate").datebox('getValue').replace(/-/g, "");
+        var yjEdate = $("#yjEdate").datebox('getValue').replace(/-/g, "");
+        var bwBdate = $("#bwBdate").datebox('getValue').replace(/-/g, "");
+        var bwEdate = $("#bwEdate").datebox('getValue').replace(/-/g, "");
+        var sdBdate = $("#sdBdate").datebox('getValue').replace(/-/g, "");
+        var sdEdate = $("#sdEdate").datebox('getValue').replace(/-/g, "");
+
+        if (yjBdate > yjEdate) {
+            $.messager.alert("操作提示", "预警时间开始日期不能大于预警时间结束日期！！", "info");
+            return;
+        }
+
+        if (bwBdate > bwEdate) {
+            $.messager.alert("操作提示", "生成报文开始时间不能大于生成报文结束时间！！", "info");
+            return;
+        }
+
+        if (sdBdate > sdEdate) {
+            $.messager.alert("操作提示", "审定开始时间不能大于审定结束时间！！", "info");
+            return;
+        }
+
+
+        var glzbNo=$("#glzbNo").combobox('getValue'); //分公司
+        var yybdm=$("#yybdm").combobox('getValue'); //营业部
+
+        var kyjybh=$("#kyjybh").val();  //可疑交易任务编号
+        var custId=$("#custId").val();  //客户号
+        var khzjhm=$("#khzjhm").val();  //客户证件号码
+        var custName=$("#custName").val();  //客户姓名
+
+        var isBw=$("#isBw").combobox('getValue'); //是否生成报文
+        var kyjytz=$('#kyjytz').combobox("getValues").join(",");//可疑交易特征
+        var jzStaffNo=$("#jzStaffNo").val();  //集中分析处理人员(工号)
+        var hgStaffNo=$("#hgStaffNo").val();  //法律合规部处理人员(工号)
+
+        $.messager.progress({
+            title : '提示',
+            text : '数据查询中，请稍后....'
+        });
+
+        var datagridH = ($("body").height()) - 150;
+        Datagrid_yybky.datagrid({
+            height : datagridH,
+            border : true,//显示表格线
+            rownumbers : true,//显示行号
+            striped : true,//条纹,斑马线
+            showFooter : false,//显示底部
+            remoteSort : false,//排序方式【当前页false】、【服务端true】
+            singleSelect : false,//只能单选一行记录
+            pagination : true,//显示分页
+            pageSize : 50,//每页大小【必须在pageList中有】
+            pageList : [50, 100, 500, 1000],//可选每页数据条数【必须包含pageSize的值，要不报错】
+            url : "<c:url value='/yybkyjy/yybkyjyxxcp.do?method=listKyjyReportingCreate' />",
+            queryParams : {
+                yjBdate : yjBdate,
+                yjEdate : yjEdate,
+                bwBdate : bwBdate,
+                bwEdate : bwEdate,
+                sdBdate : sdBdate,
+                sdEdate : sdEdate,
+                glzbNo : glzbNo,
+                yybdm : yybdm,
+                kyjybh : kyjybh,
+                custId : custId,
+                khzjhm : khzjhm,
+                custName : custName,
+                isBw : isBw,
+                kyjytz : kyjytz,
+                jzStaffNo : jzStaffNo,
+                hgStaffNo : hgStaffNo,
+                page:1,
+                rows:50
+            },
+            nowrap : true,//不换行【设置为true可以提高加载性能!!换行+自动行高+列宽度=列内容换行展示】
+            autoRowHeight : false,//是否自动行高【设置为false可以提高加载性能】
+            frozenColumns : [ [ {//冻结列，在columns就不要写这一列了。【会影响加载性能】
+                field : 'ck',
+                checkbox : true
+            }] ],
+            columns : [[
+                {
+                    title : "<strong>可疑交易事件编号</strong>",
+                    halign:'center',
+                    field : "kyjybh",
+                    sortable : true,
+                    width : "200px"
+                },
+                {
+                    title : "<strong>预警时间</strong>",
+                    halign:'center',
+                    field : "yjDate",
+                    sortable : true,
+                    width : "150px",
+                },
+                {
+                    title : "<strong>营业部提交时间</strong>",
+                    halign:'center',
+                    field : "yybSubDate",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        return timestampToTime(value)
+                    }
+                },
+                {
+                    title : "<strong>审定时间</strong>",
+                    halign:'center',
+                    field : "sdDate",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        return timestampToTime(value)
+                    }
+                },{
+                    title : "<strong>可疑交易特征</strong>",
+                    halign:'center',
+                    field : "kyjytz",
+                    sortable : true,
+                    width : "150px"
+                },
+                {
+                    title : "<strong>所属分公司</strong>",
+                    halign:'center',
+                    field : "orgid",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>所属营业部</strong>",
+                    halign:'center',
+                    field : "yybdm",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>涉及客户号</strong>",
+                    halign:'center',
+                    field : "sjCustId",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>涉及客户姓名</strong>",
+                    halign:'center',
+                    field : "sjCustName",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>涉及客户证件号码</strong>",
+                    halign:'center',
+                    field : "sjCustCardId",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        if (value!=""&&value!=null){
+                            return value.substring(0, 4) + "" + value.substring(4, value.length - 4).replace(/\d+/g, "************") + "" + value.substring(value.length - 4, value.length);
+                        }
+                    }
+                },{
+                    title : "trueIdCard",
+                    field : "trueIdCard",
+                    sortable : true,
+                    hidden : true
+                },{
+                    title : "<strong>营业部判断</strong>",
+                    halign:'center',
+                    field : "yybJudge",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        if(value==0){
+                            return "不可疑";
+                        }else if(value==1){
+                            return "可疑";
+                        }
+                    }
+                },{
+                    title : "<strong>集中分析判断</strong>",
+                    halign:'center',
+                    field : "jzJudge",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        if(value==0){
+                            return "不可疑";
+                        }else if(value==1){
+                            return "可疑";
+                        }
+                    }
+                },{
+                    title : "<strong>法律合规部判断</strong>",
+                    halign:'center',
+                    field : "hgJudge",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        if(value==0){
+                            return "不可疑";
+                        }else if(value==1){
+                            return "可疑";
+                        }
+                    }
+                },{
+                    title : "<strong>营业部合规管理员</strong>",
+                    halign:'center',
+                    field : "yybStaffNo",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>集中分析处理人员</strong>",
+                    halign:'center',
+                    field : "jzStaffNo",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>法律合规部处理人员</strong>",
+                    halign:'center',
+                    field : "hgStaffNO",
+                    sortable : true,
+                    width : "150px"
+                },{
+                    title : "<strong>是否生成报文</strong>",
+                    halign:'center',
+                    field : "isCreateReport",
+                    sortable : true,
+                    width : "150px",
+                    formatter: function(value,row,index){
+                        if(value==0){
+                            return "否";
+                        }else if(value==1){
+                            return "是";
+                        }
+                    }
+                }
+            ]],
+            toolbar : [ {
+                text : "全部导出",
+                iconCls : "icon-export",
+                handler : function() {
+                    doExport();
+                }
+            } ,{
+                text : "人工关联任务",
+                iconCls : "icon-edit",
+                handler : function() {
+                    doRelevance();
+                }
+            } ,{
+                text : "<b style='color:red;'>双击选中进入可疑交易报告详细信息页面</b>"
+            } ],
+            onDblClickRow : function(rowIndex, rowData) {//表格双击事件
+                getKyjyDetail(rowIndex);
+            },
+            onLoadSuccess:function(index, row) {
+                getIdCardDetail()
+
+            }
+        });
+
+        $.messager.progress('close'); // 提交成功，隐藏进度条
+    }
+
+    //获取详细证件号
+    function getIdCardDetail(){
+        $("td[field=sjCustCardId]").each(function(ind,val){
+            var IdCard=$(this).next("td[field=trueIdCard]").find("div").html();
+            $(this).find("div").attr("title",IdCard);
+        })
+    }
+
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        var Y = date.getFullYear() + '-'
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
+        var D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' '
+        var h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':'
+        var m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':'
+        var s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds())
+        return Y + M + D + h + m + s
+    }
+
+
+    // 导出Excel
+    function doExport() {
+        var yjBdate = $("#yjBdate").datebox('getValue').replace(/-/g, "");
+        var yjEdate = $("#yjEdate").datebox('getValue').replace(/-/g, "");
+        $("#yyb_kyjy").submit();
+    }
+
+    var Datagrid_yybky = $("#Datagrid_yybky");//定义变量,减少多次获取选择器
+    function getKyjyDetail(rowIndex) {
+        var rows = Datagrid_yybky.datagrid('getRows');
+        var row = rows[rowIndex];
+
+        $('#Dialog_comp_data').dialog({
+            title : "可疑交易报告生成",
+            width : 1100,
+            height : "100%",
+            closed : false,
+            href : "kyjyDetail.jsp?eventid=" + row.kyjybh+"&kyjytz="+row.kyjytz,
+            buttons:[{
+                text : '预览',
+                iconCls : 'icon-eye',
+                handler : function() {
+                    createFileXml(row.kyjybh,"preview");
+                }
+            }, {
+                text : '生成XML文件',
+                iconCls : 'icon-fileXml',
+                handler : function() {
+                    createFileXml(row.kyjybh,"upload");
+                }
+            },{
+                text : '取消',
+                iconCls : 'icon-cancel',
+                handler : function() {
+                    $('#Dialog_comp_data').dialog('close');
+                }
+            } ]
+        });
+    }
+
+    function createFileXml(eventid,type){
+
+        //先校验可疑可疑交易报告基本信息
+        var rpnc = $("#rpnc").textbox("getValue");//上报网点代码
+        var detr = $("#detr").combobox("getValue");//可疑交易报告紧急程度
+        if (detr==""||detr==null){
+            $.messager.alert("操作提示", "请选择可疑交易报告紧急程度", "info");
+            return false;
+        }
+        var torp=$("#torp").numberbox("getValue");//报送次数标志
+
+        var orxn = $("#orxn").textbox("getValue");//初次报送的可疑交易报告报文名称
+
+        if(parseInt(torp)!=1){
+            if (orxn=="@N"){
+                $.messager.alert("操作提示", "报送次数不为1，则“初次报送的可疑交易报告报文名称”不能填写“@N”", "info");
+                return false;
+            }
+
+            if(!/^(N|C)SSE1001111000019-\d{8}-\d{8}$/.test(orxn)){
+                $.messager.alert("操作提示", "请填写正确的初次报送的可疑交易报文名称", "info");
+                return false;
+            }
+        }
+
+        if(parseInt(torp)==1){
+
+            if(orxn!="@N"&&!/^(N|C)SSE1001111000019-\d{8}-\d{8}$/.test(orxn)){
+                $.messager.alert("操作提示", "请填写正确的初次报送的可疑交易报文名称", "info");
+                return false;
+            }
+        }
+
+
+        var tosc = $('#tosc').val();//涉罪类型
+        if (tosc==null||tosc==""){
+            $.messager.alert("操作提示", "请选择涉罪类型", "info");
+            return false;
+        }
+
+        var stcb = $("#stcb").val();//资金交易及客户行为情况
+        if (stcb==null||stcb==""){
+            $.messager.alert("操作提示", "请填写资金交易及客户行为情况", "info");
+            return false;
+        }
+        var aosp = $("#aosp").val();//疑点分析/
+        if (aosp==null||aosp==""){
+            $.messager.alert("操作提示", "请填写疑点分析", "info");
+            return false;
+        }
+        var setn = $("#setn").numberbox("getValue");//可疑主体总数
+        var stnm = $("#stnm").numberbox("getValue");//可疑交易总数
+
+        var dorp = $("#dorp").combobox("getValue");//报送方向
+        if (dorp==null||dorp==""){
+            $.messager.alert("操作提示", "请选择报送方向", "info");
+            return false;
+        }
+        var odrp = $("#odrp").textbox("getValue");//其他报送方向
+        if (odrp==null||odrp==""){
+            $.messager.alert("操作提示", "请填写其他报送方向", "info");
+            return false;
+        }
+        var tptr = $("#tptr").combobox("getValue");//可疑交易报告触发点
+        if (tptr==null||tptr==""){
+            $.messager.alert("操作提示", "请选择可疑交易报告触发点", "info");
+        }
+        var otpr = $("#otpr").textbox("getValue");//其他可疑报告触发点
+        if (otpr==null||otpr==""){
+            $.messager.alert("操作提示", "请填写其他可疑报告触发点", "info");
+            return false;
+        }
+
+
+        var rpnm = $("#rpnm").textbox("getValue");//可疑交易报告填报人员
+        if (rpnm==null||rpnm==""){
+            $.messager.alert("操作提示", "请填写可疑交易报告填报人员", "info");
+            return false;
+        }
+        var mirs = $("#mirs").textbox("getValue");//人工补正标识
+        if (mirs==null||mirs==""){
+            $.messager.alert("操作提示", "请填写人工补正标识", "info");
+            return false;
+        }
+        /*var bwmc = $("#bwmc").textbox("getValue");//可疑交易报文名
+  if(!/^(N|C)SSE1001111000019-\d{8}-\d{8}$/.test(bwmc)){
+    $.messager.alert("操作提示", "请填写正确的可疑交易报文名称", "info");
+    return false;
+  }*/
+        $.ajax({
+            type : 'post',
+            url : _ContextPath + "/yybkyjy/yybkyjyxxcp.do?method=addKyjybgjbxx",
+            cache : false,
+            dataType : "json",
+            async : true,
+            data : {
+                eventid : eventid,
+                ricd :'E1001111000019',//报告机构编码
+                rpnc : rpnc,
+                detr : detr,
+                torp : torp,
+                setn : setn,
+                stnm : stnm,
+                orxn : orxn,
+                dorp : dorp,
+                odrp : odrp,
+                tptr : tptr,
+                otpr : otpr,
+                stcb : stcb,
+                aosp : aosp,
+                tosc : tosc,
+                rpnm : rpnm,
+                mirs : mirs,
+                stcr : $("#stcr").textbox("getValue"),//可疑交易特征
+                //bwmc : bwmc
+
+            },
+            success : function(result) {
+                //预览
+                if (type=="preview"){
+                    $('<div></div>').dialog({
+                        id : 'Dialog_xmlPreview',
+                        title : '预览',
+                        width : 1100,
+                        height : "100%",
+                        closed : false,
+                        cache : false,
+                        queryParams : {
+                            "eventid" : eventid,
+                        },
+                        href : "xmlPreview.jsp",
+                        modal : true,
+                        onClose : function() {
+                            $(this).dialog('destroy');
+                        },
+                        buttons : [{
+                            text : '关闭',
+                            iconCls : 'icon-cancel',
+                            handler : function() {
+                                $("#Dialog_xmlPreview").dialog('destroy');
+                            }
+                        } ]
+                    });
+                    //生成xml
+                }else if(type=="upload"){
+                    if(result.isOk==true){
+                        $('<div></div>').dialog({
+                            id : 'Dialog_xmlInfo',
+                            title : '文件详情',
+                            width : 700,
+                            height : 300,
+                            closed : false,
+                            cache : false,
+                            queryParams : {
+                                "eventid" : eventid,
+                            },
+                            href : "xmlInfo.jsp",
+                            modal : true,
+                            onClose : function() {
+                                $(this).dialog('destroy');
+                            },
+                            buttons : [{
+                                text : '关闭',
+                                iconCls : 'icon-cancel',
+                                handler : function() {
+                                    $("#Dialog_xmlInfo").dialog('destroy');
+                                }
+                            } ]
+                        });
+                    }else{
+                        $.messager.alert("操作提示", result.info, "error");
+                    }
+                }
+
+            },
+            error : function(result) {
+                $.messager.alert("操作提示", result.info, "error");
+            }
+        });
+    }
+
+    function doRelevance(){
+        var eventids=[];
+        var rows=$("#Datagrid_yybky").datagrid("getChecked");
+        for(var i=0;i < rows.length; i++){
+            eventids.push(rows[i].kyjybh);
+            if (rows[i].isCreateReport=="1"){
+                $.messager.alert("操作提示", "可疑交易任务"+rows[i].kyjybh+"已经生成过报文，不能进行关联任务操作", "info");
+                return false;
+            }
+        }
+
+        if (eventids==""||eventids==null){
+            $.messager.alert("操作提示", "请选择需要关联的任务", "info");
+            return false;
+        }else {
+            $('<div></div>').dialog({
+                id : 'Dialog_Relevance',
+                title : '关联任务',
+                width : 700,
+                height : 300,
+                closed : false,
+                cache : false,
+                queryParams : {
+                    "eventids" : eventids.join(","),
+                },
+                href : "relevance.jsp",
+                modal : true,
+                buttons :[ {
+                    text : '确定',
+                    iconCls : 'icon-ok',
+                    handler : function() {
+                        doSureRele();
+                    }
+                }, {
+                    text : '关闭',
+                    iconCls : 'icon-cancel',
+                    handler : function() {
+                        $("#Dialog_Relevance").dialog('destroy');
+                    }
+                } ]
+            });
+        }
+    }
+
+    function doSureRele(){
+        var eventid=$("#eventidRele").val();
+        //var fileName=$("#XMLName").val();
+
+        if (eventid==""||eventid==null){
+            $.messager.alert("操作提示", "请填写可疑交易编号！", "info");
+            return false;
+        }
+        /*if (fileName==""||fileName==null){
+    $.messager.alert("操作提示", "请填写XML文件名称！", "info");
+    return false;
+  }*/
+        $.ajax({
+            type : 'post',
+            async: false,
+            url : "<c:url value='/yybkyjy/yybkyjyxxcp.do?method=getXmlReInfo' />",
+            dataType : "json",
+            data : {eventid:eventid},
+            success : function(result) {
+                if (result.data.data==""||result.data.data==null){
+                    $.messager.alert("操作提示", "未查询到该报文信息", "info");
+                    return false;
+                }else {
+                    $("#XMLName").val(result.data.data.fileName);
+                    $("#XMLPath").val(result.data.data.filePath);
+                    $("#XMLTime").val(result.data.data.createTime);
+                    $.messager.confirm('操作提示', "是否要进行任务关联？", function(isConfirm) {
+                        if (isConfirm) {
+                            $.messager.progress();//显示进度条
+                            $.post('<c:url value="/yybkyjy/yybkyjyxxcp.do?method=doSureRelevance" />', {
+                                eventid:eventid,
+                                //fileName:fileName,
+                                fileName:$("#XMLName").val(),
+                                filePath:$("#XMLPath").val(),
+                                createTime:$("#XMLTime").val(),
+                                eventids:$("#eventids").val()
+
+                            }, function(operInfo) {
+                                if (operInfo.isOk) {
+                                    $.messager.alert("操作提示", operInfo.info, "info");
+                                    $('#Dialog_Relevance').dialog("destroy");
+                                    doSearchkh()
+                                } else {
+                                    $.messager.alert("操作提示", operInfo.info, "error");
+                                }
+                            }, 'json');
+                        }
+                    });
+                }
+            },
+
+
+        });
+    }
+</script>
+</body>
+</html>

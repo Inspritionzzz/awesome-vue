@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            css轮廓：
+                轮廓是在元素周围绘制的一条线，在边框之外，以凸显元素。
+                CSS 拥有如下轮廓属性：
+                    outline-style
+                    outline-color
+                    outline-width
+                    outline-offset
+                    outline
+             css outline-style具有的属性,并可设置如下值：
+                    dotted - 定义点状的轮廓。
+                    dashed - 定义虚线的轮廓。
+                    solid - 定义实线的轮廓。
+                    double - 定义双线的轮廓。
+                    groove - 定义 3D 凹槽轮廓。
+                    ridge - 定义 3D 凸槽轮廓。
+                    inset - 定义 3D 凹边轮廓。
+                    outset - 定义 3D 凸边轮廓。
+                    none - 定义无轮廓。
+                    hidden - 定义隐藏的轮廓。
+         */
+        p {outline-color:red;}
+        p.dotted {outline-style: dotted;}
+        p.dashed {outline-style: dashed;}
+        p.solid {outline-style: solid;}
+        p.double {outline-style: double;}
+        p.groove {outline-style: groove;}
+        p.ridge {outline-style: ridge;}
+        p.inset {outline-style: inset;}
+        p.outset {outline-style: outset;}
+    </style>
+    <style>
+        /*
+                outline-width 属性指定轮廓的宽度，并可设置如下值之一：
+                    thin（通常为 1px）
+                    medium（通常为 3px）
+                    thick （通常为 5px）
+                    特定尺寸（以 px、pt、cm、em 计）
+        */
+        p.ex1 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: thin;
+        }
+        p.ex2 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: medium;
+        }
+        p.ex3 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: thick;
+        }
+        p.ex4 {
+            border: 1px solid black;
+            outline-style: solid;
+            outline-color: red;
+            outline-width: 4px;
+        }
+    </style>
+    <style>
+        p.ex5 {
+            border: 2px solid black;
+            outline-style: solid;
+            outline-color: red;
+            /*outline-color: #ff0000; !* red *!*/
+            /*outline-color: rgb(255, 0, 0); !* 红色 *!*/
+            /*outline-color: hsl(0, 100%, 50%); !* 红色 *!*/
+            /*outline-color: invert;*/
+        }
+
+        p.ex6 {
+            border: 2px solid black;
+            outline-style: dotted;
+            outline-color: blue;
+        }
+
+        p.ex7 {
+            border: 2px solid black;
+            outline-style: outset;
+            outline-color: grey;
+        }
+    </style>
+    <style>
+        /* 简写轮廓值 */
+        p.ex8 {outline: dashed;}
+        p.ex9 {outline: dotted red;}
+        p.ex10 {outline: 5px solid yellow;}
+        p.ex11 {outline: thick ridge pink;}
+    </style>
+    <style>
+        /*
+            css轮廓偏移：outline-offset 属性在元素的轮廓与边框之间添加空间。元素及其轮廓之间的空间是透明的。
+         */
+        p.ex12 {
+            margin: 30px;
+            border: 1px solid black;
+            outline: 1px solid red;
+            outline-offset: 15px;
+        }
+    </style>
+    <style>
+        p.ex13 {
+            margin: 30px;
+            background:yellow;
+            border: 1px solid black;
+            outline: 1px solid red;
+            outline-offset: 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>outline-style 属性</h1>
+<p class="dotted">点状轮廓</p>
+<p class="dashed">虚线轮廓</p>
+<p class="solid">实线轮廓</p>
+<p class="double">双线轮廓</p>
+<p class="groove">凹槽轮廓。效果取决于 outline-color 值。</p>
+<p class="ridge">凸脊轮廓。效果取决于 outline-color 值。</p>
+<p class="inset">凹边轮廓。效果取决于 outline-color 值。</p>
+<p class="outset">凸边轮廓。效果取决于 outline-color 值。</p>
+
+<h1>outline-width 属性</h1>
+<p class="ex1">细的轮廓。</p>
+<p class="ex2">中等的轮廓。</p>
+<p class="ex3">粗的轮廓。</p>
+<p class="ex4">4 像素的粗轮廓。</p>
+
+<h1>outline-color 属性</h1>
+<p>outline-color 属性用于设置轮廓的颜色。</p>
+<p class="ex5">红色的实线轮廓。</p>
+<p class="ex6">蓝色的点状轮廓。</p>
+<p class="ex7">灰色的实线轮廓。</p>
+
+<h1>outline 属性</h1>
+<p class="ex8">点状轮廓。</p>
+<p class="ex9">红色的点状轮廓。</p>
+<p class="ex10">5 像素的黄色实线轮廓。</p>
+<p class="ex11">粗的粉色凸脊轮廓。</p>
+
+<h1>outline-offset 属性</h1>
+<p class="ex12">本段落在边框边缘外 15 像素处有一条轮廓线。</p>
+<h1>outline-offset 属性</h1>
+<p class="ex13">本段落在边框边缘外 15 像素处有一条轮廓线。</p>
+</body>
+</html>

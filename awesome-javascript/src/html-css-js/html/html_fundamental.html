@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <!--
+            HTML-CSS:
+        -->
+        <!-- 内部样式表:当某个文件需要特别样式时,可以使用内部样式表,应用到多个元素 -->
+        <style type="text/css">
+            h1 {color: red}
+            p {color: black}
+        </style>
+        <!-- 外部样式表:可以通过改变一个文件来改变整个站点的外观 -->
+        <link rel="stylesheet" type="text/css" href="/html/csstest1.css" >
+
+        <!--
+            html头部元素：
+                (1)<head> 元素是所有头部元素的容器。<head> 内的元素可包含脚本，指示浏览器在何处可以找到样式表，提供元信息，等等。
+                   以下标签都可以添加到 head 部分：<title>、<base>、<link>、<meta>、<script> 以及 <style>。
+                (2)<title> 标签定义文档的标题。
+                   title 元素在所有 HTML/XHTML 文档中都是必需的。
+                   title 元素能够：
+                        定义浏览器工具栏中的标题
+                        提供页面被添加到收藏夹时显示的标题
+                        显示在搜索引擎结果中的页面标题
+                (3)<base> 标签为页面上的所有链接规定默认地址或默认目标（target）
+                (4)<link> 标签定义文档与外部资源之间的关系。<link> 标签最常用于连接样式表
+                (5)<style> 标签用于为 HTML 文档定义样式信息。您可以在 style 元素内规定 HTML 元素在浏览器中呈现的样式
+                (6)元数据（metadata）是关于数据的信息。
+                   <meta> 标签提供关于 HTML 文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。
+                   典型的情况是，meta 元素被用于规定页面的描述、关键词、文档的作者、最后修改时间以及其他元数据。
+                   <meta> 标签始终位于 head 元素中。
+                   元数据可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。
+                   一些搜索引擎会利用 meta 元素的 name 和 content 属性来索引您的页面。
+        -->
+<!--        <base href="http://www.w3school.com.cn/images/" />-->
+        <base target="_blank" />
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+        <meta http-equiv="Content-Language" content="zh-cn" />
+<!--        <link rel="stylesheet" type="text/css" href="mystyle.css" />-->
+        <meta name="description" content="Free Web tutorials on HTML, CSS, XML" />
+        <meta name="keywords" content="HTML, CSS, XML" />
+    </head>
+    <body>
+
+    <p>
+        <a href="http://www.w3school.com.cn" target="_blank">这个连接</a> 将在新窗口中加载，因为 target 属性被设置为 "_blank"。
+    </p>
+    <p>
+        <a href="http://www.w3school.com.cn">这个连接</a> 也将在新窗口中加载，即使没有 target 属性。
+    </p>
+
+    <!-- 内联样式:当特殊的样式需要应用到个别元素时,可以使用内联样式 -->
+    <p style="color: red; margin-left: 20px">
+        This is a paragraph
+    </p>
+
+    <!--
+        HTML标题:
+            (1)<h1> - <h6>;
+            (2)浏览器会在标题的前后添加空行,默认情况下HTML会在块级元素前后添加额外的空行,比如段落、标题元素前后;
+            (3)请确保将 HTML heading 标签只用于标题,不要仅仅是为了产生粗体或大号的文本而使用标题;
+            (4)搜索引擎使用标题为网页的结构和内容编制索引;
+    -->
+        <h1>标题h1</h1>
+        <h2>标题h2</h2>
+        <h3>标题h3</h3>
+        <h4>标题h4</h4>
+        <h5>标题h5</h5>
+        <h6>标题h6</h6>
+
+    <!--
+        HTML段落:
+            (1)<p> - </p>;
+            (2)虽然使用<p>浏览器可以在段落的前后添加空行,但使用空的段落标记<p></p>插入空行是不建议的,用<br />;
+            (3)<br />元素是一个空的HTML元素,由于关闭标签没有任何意义,因此它没有结束标签,不建议使用<br>;
+            (4)注意:当显示页面时,浏览器会移除源代码中多余的空格和空行.所有连续的空格或空行都会被算作一个空格,需要注意的是,
+                    HTML 代码中的所有连续的空行（换行）也被显示为一个空格;
+    -->
+    <p>段落</p>
+    <p>This is<br />a para<br />graph with line breaks</p>
+    <!--
+        HTML水平线:<hr />
+    -->
+    <hr />
+
+    <!--
+        HTML链接:<a> - </a>
+    -->
+    <a href="http://www.w3school.com.cn">This is a link</a>
+    <br />
+    <!--
+        HTML链接:<a> - </a>
+    -->
+    <img src="../../assets/logo.png" width="104" height="142" />
+    <!--
+        HTML元素:开始标签 + 元素内容 + 结束标签
+    -->
+    <br />
+    <!--
+        HTML属性:属性总是在HTML元素的开始标签中规定;
+                 属性和属性值对大小写不敏感,推荐小写的属性;
+                 属性是被包含在引号内,双引号和单引号都可以;
+        适用于大多数HTML元素的属性:
+                 classname规定元素的类名;
+                 id规定元素的唯一id;
+                 style规定元素的行内样式;
+                 title:规定元素的额外信息;
+    -->
+    <a href="http://www.w3school.com.cn">This is a link</a>
+    <h1 align="center">居中</h1>
+<!--    <body bgcolor="#f4a460"></body>-->  <!-- 不建议!!! -->
+    <table border="1"></table>
+
+    <!--
+        HTML样式:通过使用style属性直接将样式添加到html元素,或间接的在独立样式表(CSS文件)中进行定义;
+        注应避免使用下面的这些标签和属性,在未来html的版本将不支持:
+            <center>、<font>和<basefont> -- 定义html字体、<s>和<strike> -- 定义删除线文本、<u>定义下划线文本;
+            align -- 定义文本的对齐方式、bgcolor -- 定义背景颜色、color -- 定义文本颜色;
+            可使用样式代替以上这些标签和属性;
+    -->
+    <body style="background-color:cornflowerblue">
+        <!-- 定义元素中文本的字体系列、颜色和字体尺寸,style属性淘汰了旧的<font>标签 -->
+        <h2 style="background-color:red">This is a heading</h2>
+        <p style="background-color:green">This is a paragraph.</p>
+
+        <!-- 定义元素中文本的字体系列、颜色和字体尺寸,style属性淘汰了旧的<font>标签 -->
+        <h1 style="font-family:verdana">A heading</h1>
+        <p style="font-family:arial;color:red;font-size:20px;">A paragraph.</p>
+    </body>
+
+    <!--
+      HTML文本格式化:html可以定义很多供格式化输出的元素,比如粗体和斜体字;
+        <b>	定义粗体文本
+        <big>	定义大号字
+        <em>	定义着重文字
+        <i>	定义斜体字
+        <small>	定义小号字
+        <strong>	定义加重语气
+        <sub>	定义下标字
+        <sup>	定义上标字
+        <ins>	定义插入字
+        <del>	定义删除字
+        <s>	不建议使用,使用 <del> 代替
+        <strike>	不建议使用,使用 <del> 代替
+        <u>	不建议使用,使用样式（style）代替
+    -->
+    <!--    文本格式化-->
+    <b>This text is bold</b>
+    <br />
+    <strong>This text is strong</strong>
+    <br />
+    <big>This text is big</big>
+    <br />
+    <em>This text is emphasized</em>
+    <br />
+    <i>This text is italic</i>
+    <br />
+    <small>This text is small</small>
+    <br />
+    This text contains
+    <sub>subscript</sub>
+    <br />
+    This text contains
+    <sup>superscript</sup>
+    <!--    预格式文本-->
+    <pre>
+        这是
+        预格式文本。
+        它保留了      空格
+        和换行。
+    </pre>
+    <p>pre 标签很适合显示计算机代码：</p>
+    <pre>
+        for i = 1 to 10
+             print i
+        next i
+    </pre>
+    <!--    计算机输出标签-->
+    <code>Computer code</code>
+    <br />
+    <kbd>Keyboard input</kbd>
+    <br />
+    <tt>Teletype text</tt>
+    <br />
+    <samp>Sample text</samp>
+    <br />
+    <var>Computer variable</var>
+    <br />
+    <p>
+        <b>注释：</b>这些标签常用于显示计算机/编程代码。
+    </p>
+    <!--    地址-->
+    <address>
+        Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <!--    缩写和首字母缩写-->
+    <abbr title="etcetera">etc.</abbr>
+    <br />
+    <acronym title="World Wide Web">WWW</acronym>
+    <p>在某些浏览器中，当您把鼠标移至缩略词语上时，title 可用于展示表达的完整版本。</p>
+    <p>仅对于 IE 5 中的 acronym 元素有效。</p>
+    <p>对于 Netscape 6.2 中的 abbr 和 acronym 元素都有效。</p>
+    <!--    文字方向-->
+    <p>
+        如果您的浏览器支持 bi-directional override (bdo)，下一行会从右向左输出 (rtl)；
+    </p>
+    <bdo dir="rtl">
+        Here is some Hebrew text
+    </bdo>
+    <!--    块引用-->
+    这是长的引用：
+    <blockquote>
+        这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。
+    </blockquote>
+    这是短的引用：
+    <q>
+        这是短的引用。
+    </q>
+    <p>
+        使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。
+    </p>
+    <!--    删除字效果和插入字效果-->
+    <p>一打有 <del>二十</del> <ins>十二</ins> 件。</p>
+    <p>大多数浏览器会改写为删除文本和下划线文本。</p>
+    <p>一些老式的浏览器会把删除文本和下划线文本显示为普通文本。</p>
+
+    <!--
+        HTML引用:
+            <q> -- 短引用
+            <blockquote> -- 长引用
+            <abbr> -- 缩略词
+            <dfn> -- 定义
+            <address> -- 用于联系信息
+            <cite> -- 定义著作标题
+            <bdo> -- 用于双向重写
+    -->
+    <p>WWF 的目标是：<q>构建人与自然和谐共存的世界。</q></p>
+    <p>以下内容引用自 WWF 的网站：</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        五十年来，WWF 一直致力于保护自然界的未来。
+        世界领先的环保组织，WWF 工作于 100 个国家，
+        并得到美国一百二十万会员及全球近五百万会员的支持。
+    </blockquote>
+    <p><abbr title="World Health Organization">WHO</abbr> 成立于 1948 年。</p>
+    <p><dfn title="World Health Organization">WHO</dfn> 成立于 1948 年。</p>
+    <p><dfn>WHO</dfn> World Health Organization 成立于 1948 年。</p>
+    <address>
+        Written by Donald Duck.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p>
+    <bdo dir="rtl">This text will be written from right to left</bdo>
+
+    <!--
+        HTML颜色:
+            颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成(RGB),每种颜色的最小值是 0(十六进制:#00),
+            最大值是 255(十六进制:#FF),颜色名和十六进制颜色值见文档;
+                Color HEX	Color RGB
+                #000000	rgb(0,0,0)
+                #FF0000	rgb(255,0,0)
+                #00FF00	rgb(0,255,0)
+                #0000FF	rgb(0,0,255)
+                #FFFF00	rgb(255,255,0)
+                #00FFFF	rgb(0,255,255)
+                #FF00FF	rgb(255,0,255)
+                #C0C0C0	rgb(192,192,192)
+                #FFFFFF	rgb(255,255,255)
+    -->
+
+    <!--
+        HTML-CSS:
+            <style>	定义样式定义
+            <link>	定义资源引用
+            <div>	定义文档中的节或区域（块级）
+            <span>	定义文档中的行内的小块或区域
+            <font>	规定文本的字体、字体尺寸、字体颜色,不赞成使用,请使用样式
+            <basefont>	定义基准字体,不赞成使用,请使用样式
+            <center>	对文本进行水平居中,不赞成使用,请使用样式
+    -->
+    <br />
+    <a href="/example/html/lastpage.html" style="text-decoration:none">
+        这是一个链接！
+    </a>
+
+    <!--
+        HTML链接:HTML使用超级链接与网络上的另一个文档相连;
+                 可以是一个字、一个词,或者一组词,也可以是一副图像;
+        注意!!!:
+            (1)请始终将正斜杠添加到子文件夹。假如这样书写链接：href="http://www.w3school.com.cn/html"，就会向服务器产生两次 HTTP 请求。
+            这是因为服务器会添加正斜杠到这个地址，然后创建一个新的请求，就像这样：href="http://www.w3school.com.cn/html/"
+            (2)命名锚经常用于在大型文档开始位置上创建目录。可以为每个章节赋予一个命名锚，然后把链接到这些锚的链接放到文档的上部。
+            百度百科几乎每个词条都采用这样的导航方式。假如浏览器找不到已定义的命名锚，那么就会定位到文档的顶端。不会有错误发生。
+    -->
+    <p><a href="/index.html">本文本</a> 是一个指向本网站中的一个页面的链接。</p>
+    <p><a href="http://www.microsoft.com/">本文本</a> 是一个指向万维网上的页面的链接。</p>
+    <p>
+        您也可以使用图像来作链接：
+        <a href="https://cn.vuejs.org/v2/guide/">
+            <img border="0" src="../../assets/logo.png" />
+        </a>
+    </p>
+    <!-- 使用target属性在新窗口打开文档 -->
+    <a href="http://www.w3school.com.cn/" target="_blank">Visit W3School!</a>
+
+    <a name="tips">基本的注意事项 - 有用的提示</a>
+    <!-- 点击跳转到锚的位置 -->
+    <a href="#tips">有用的提示</a>
+
+    <!-- 将 # 符号和锚名称添加到 URL 的末端，就可以直接链接到 tips 这个命名锚了 -->
+    <a href="http://www.w3school.com.cn/html/html_links.asp#tips">有用的提示</a>
+
+    <p>
+        <a href="#C4">查看 Chapter 4。</a>
+    </p>
+    <h2>Chapter 1</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2>Chapter 2</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2>Chapter 3</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2><a name="C4">Chapter 4</a></h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2>Chapter 5</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2>Chapter 6</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2>Chapter 7</h2>
+    <p>This chapter explains ba bla bla</p>
+    <h2>Chapter 8</h2>
+    <p>This chapter explains ba bla bla</p>
+
+    <!-- 发送电子右键 -->
+    <p>
+        这是邮件链接：
+        <a href="mailto:someone@microsoft.com?subject=Hello%20again">发送邮件</a>
+    </p>
+    <p>
+        <b>注意：</b>应该使用 %20 来替换单词之间的空格，这样浏览器就可以正确地显示文本了。
+    </p>
+
+    <p>
+        这是另一个 mailto 链接：
+        <a href="mailto:someone@microsoft.com?cc=someoneelse@microsoft.com&bcc=andsomeoneelse2@microsoft.com&subject=Summer%20Party&body=You%20are%20invited%20to%20a%20big%20summer%20party!">发送邮件！</a>
+    </p>
+    <p>
+        <b>注意：</b>应该使用 %20 来替换单词之间的空格，这样浏览器就可以正确地显示文本了。
+    </p>
+
+    <!--
+        html图像:
+            img是空标签,只包含属性,没有闭合标签,需要显示的图像使用src标识url地址;
+            图像加载需要时间,过多的图片加载会影响网页的效率;
+    -->
+    <p>
+    一幅图像：
+    <img src="../../assets/logo.png" width="128" height="128" />
+    </p>
+    <p>
+        一幅动画图像：
+        <img src="../../assets/dog.gif" width="50" height="50" />
+    </p>
+    <p>请注意，插入动画图像的语法与插入普通图像的语法没有区别。</p>
+
+    <p>
+        来自 W3School.com.cn 的图像：
+        <img src="http://www.w3school.com.cn/i/w3school_logo_white.gif" />
+    </p>
+
+    <!--    图像失效时显示文本-->
+    <p>仅支持文本的浏览器无法显示图像，仅仅能够显示在图像的 "alt" 属性中指定的文本。在这里，"alt" 的文本是“向左转”。</p>
+    <p>请注意，如果您把鼠标指针移动到图像上，大多数浏览器会显示 "alt" 文本。</p>
+    <img src="boat.gif" alt="Big Boat">
+
+
+    <!--    <body background="/i/eg_background.jpg">-->
+    <h3>图像背景</h3>
+    <p>gif 和 jpg 文件均可用作 HTML 背景。</p>
+    <p>如果图像小于页面，图像会进行重复。</p>
+
+    <h2>未设置对齐方式的图像：</h2>
+    <p>图像 <img src ="../../assets/dog.gif" width="200" height="200"> 在文本中</p>
+    <h2>已设置对齐方式的图像：</h2>
+    <p>图像 <img src="../../assets/dog.gif" align="bottom"  width="200" height="200"> 在文本中</p>
+    <p>图像 <img src ="../../assets/dog.gif" align="middle"  width="200" height="200"> 在文本中</p>
+    <p>图像 <img src ="../../assets/dog.gif" align="top"  width="200" height="200"> 在文本中</p>
+    <p>请注意，bottom 对齐方式是默认的对齐方式。</p>
+
+    <p>
+        <img src ="../../assets/dog.gif" align ="left"  width="200" height="200">
+        带有图像的一个段落。图像的 align 属性设置为 "left"。图像将浮动到文本的左侧。
+    </p>
+    <p>
+        <img src ="../../assets/dog.gif" align ="right"  width="200" height="200">
+        带有图像的一个段落。图像的 align 属性设置为 "right"。图像将浮动到文本的右侧。
+    </p>
+    <p>通过改变 img 标签的 "height" 和 "width" 属性的值，您可以放大或缩小图像。</p>
+
+    <p>
+        您也可以把图像作为链接来使用：
+        <a href="index.html">
+            <img border="0" src="../../assets/dog.gif" width="200" height="200"/>
+        </a>
+    </p>
+
+    <p>请点击图像上的星球，把它们放大。</p>
+    <img src="../../assets/logo.png"
+            border="0" usemap="#planetmap"
+            alt="Planets" />
+    <map name="planetmap" id="planetmap">
+        <area
+                shape="circle"
+                coords="180,139,14"
+                href ="/example/html/venus.html"
+                target ="_blank"
+                alt="Venus" />
+
+        <area
+                shape="circle"
+                coords="129,161,10"
+                href ="/example/html/mercur.html"
+                target ="_blank"
+                alt="Mercury" />
+
+        <area
+                shape="rect"
+                coords="0,0,110,260"
+                href ="/example/html/sun.html"
+                target ="_blank"
+                alt="Sun" />
+    </map>
+
+    <p><b>注释：</b>img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name" 属性（根据浏览器），所以我们同时向 map 元素添加了 "id" 和 "name" 属性。</p>
+
+    <p>请把鼠标移动到图像上，看一下状态栏的坐标如何变化。</p>
+    <a href="index.html">
+        <img src="../../assets/logo.png" ismap />
+    </a>
+
+    <!--
+        html表格：
+            表格由 <table> 标签来定义。
+            每个表格均有若干行（由 <tr> 标签定义），每行被分割为若干单元格（由 <td> 标签定义）。
+            字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
+            如果不定义边框属性，表格将不显示边框。
+            表格	描述
+            <table>	定义表格
+            <caption>	定义表格标题。
+            <th>	定义表格的表头。
+            <tr>	定义表格的行。
+            <td>	定义表格单元。
+            <thead>	定义表格的页眉。
+            <tbody>	定义表格的主体。
+            <tfoot>	定义表格的页脚。
+            <col>	定义用于表格列的属性。
+            <colgroup>	定义表格列的组。
+    -->
+    <p>每个表格由 table 标签开始。</p>
+    <p>每个表格行由 tr 标签开始。</p>
+    <p>每个表格数据由 td 标签开始。</p>
+
+    <h4>一列：</h4>
+    <table border="1">
+        <tr>
+            <td>100</td>
+        </tr>
+    </table>
+
+    <h4>一行三列：</h4>
+    <table border="1">
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+    </table>
+
+    <h4>两行三列：</h4>
+    <table border="1">
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>500</td>
+            <td>600</td>
+        </tr>
+    </table>
+
+    <!--
+        表格的表头使用 <th> 标签进行定义。大多数浏览器会把表头显示为粗体居中的文本：
+    -->
+    <table border="1">
+        <tr>
+            <th>Heading</th>
+            <th>Another Heading</th>
+        </tr>
+        <tr>
+            <td>row 1, cell 1</td>
+            <td>row 1, cell 2</td>
+        </tr>
+        <tr>
+            <td>row 2, cell 1</td>
+            <td>row 2, cell 2</td>
+        </tr>
+    </table>
+
+    <h4>在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。</h4>
+    <table border="1">
+        <tr>
+            <td>row 1, cell 1</td>
+            <td>row 1, cell 2</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>row 2, cell 2</td>
+        </tr>
+    </table>
+
+    <h4>这个空的单元格的边框没有被显示出来。为了避免这种情况，在空单元格中添加一个空格占位符，就可以将边框显示出来。</h4>
+    <table border="1">
+        <tr>
+            <td>row 1, cell 1</td>
+            <td>row 1, cell 2</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>row 2, cell 2</td>
+        </tr>
+    </table>
+
+    <h4>跨行或跨列的表格单元格</h4>
+    <h4>横跨两列的单元格：</h4>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th colspan="2">电话</th>
+        </tr>
+        <tr>
+            <td>Bill Gates</td>
+            <td>555 77 854</td>
+            <td>555 77 855</td>
+        </tr>
+    </table>
+    <h4>横跨两行的单元格：</h4>
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <td>Bill Gates</td>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th>
+            <td>555 77 854</td>
+        </tr>
+        <tr>
+            <td>555 77 855</td>
+        </tr>
+    </table>
+
+    <h4>表格内的标签</h4>
+    <table border="1">
+        <tr>
+            <td>
+                <p>这是一个段落。</p>
+                <p>这是另一个段落。</p>
+            </td>
+            <td>这个单元包含一个表格：
+                <table border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>这个单元包含一个列表：
+                <ul>
+                    <li>苹果</li>
+                    <li>香蕉</li>
+                    <li>菠萝</li>
+                </ul>
+            </td>
+            <td>HELLO</td>
+        </tr>
+    </table>
+
+    <h4>单元格边距(Cell padding)：</h4>
+    <h4>没有 cellpadding：</h4>
+    <table border="1">
+        <tr>
+            <td>First</td>
+            <td>Row</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>Row</td>
+        </tr>
+    </table>
+
+    <h4>带有 cellpadding：</h4>
+    <table border="1"
+           cellpadding="10">
+        <tr>
+            <td>First</td>
+            <td>Row</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>Row</td>
+        </tr>
+    </table>
+
+    <h4>单元格间距(Cell spacing)</h4>
+    <h4>没有 cellspacing：</h4>
+    <table border="1">
+        <tr>
+            <td>First</td>
+            <td>Row</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>Row</td>
+        </tr>
+    </table>
+
+    <h4>带有 cellspacing：</h4>
+    <table border="1"
+           cellspacing="10">
+        <tr>
+            <td>First</td>
+            <td>Row</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>Row</td>
+        </tr>
+    </table>
+
+    <h4>背景颜色：</h4>
+    <table border="1"
+           bgcolor="red">
+        <tr>
+            <td>First</td>
+            <td>Row</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>Row</td>
+        </tr>
+    </table>
+    <h4>背景图像：</h4>
+    <table border="1"
+           background="/i/eg_bg_07.gif">
+        <tr>
+            <td>First</td>
+            <td>Row</td>
+        </tr>
+        <tr>
+            <td>Second</td>
+            <td>Row</td>
+        </tr>
+        <h4>单元背景：</h4>
+        <table border="1">
+            <tr>
+                <td bgcolor="red">First</td>
+                <td>Row</td>
+            </tr>
+            <tr>
+                <td
+                        background="../../assets/logo.png">
+                    Second</td>
+                <td>Row</td>
+            </tr>
+        </table>
+    </table>
+
+    <h4>在表格单元中排列内容：</h4>
+    <table width="400" border="1">
+        <tr>
+            <th align="left">消费项目....</th>
+            <th align="right">一月</th>
+            <th align="right">二月</th>
+        </tr>
+        <tr>
+            <td align="left">衣服</td>
+            <td align="right">$241.10</td>
+            <td align="right">$50.20</td>
+        </tr>
+        <tr>
+            <td align="left">化妆品</td>
+            <td align="right">$30.00</td>
+            <td align="right">$44.45</td>
+        </tr>
+        <tr>
+            <td align="left">食物</td>
+            <td align="right">$730.40</td>
+            <td align="right">$650.00</td>
+        </tr>
+        <tr>
+            <th align="left">总计</th>
+            <th align="right">$1001.50</th>
+            <th align="right">$744.65</th>
+        </tr>
+    </table>
+
+    <h4>框架(frame)属性</h4>
+    <p><b>注释：</b>frame 属性无法在 Internet Explorer 中正确地显示。</p>
+    <p>Table with frame="box":</p>
+    <table frame="box">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+
+    <p>Table with frame="above":</p>
+    <table frame="above">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <p>Table with frame="below":</p>
+    <table frame="below">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <p>Table with frame="hsides":</p>
+    <table frame="hsides">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <p>Table with frame="vsides":</p>
+    <table frame="vsides">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+
+    <!--
+        html列表:
+            标签	描述
+            <ol>	定义有序列表。
+            <ul>	定义无序列表。
+            <li>	定义列表项。
+            <dl>	定义定义列表。
+            <dt>	定义定义项目。
+            <dd>	定义定义的描述。
+            <dir>	已废弃。使用 <ul> 代替它。
+            <menu>	已废弃。使用 <ul> 代替它。
+    -->
+    <h4>Disc 项目符号列表：</h4>
+    <ul type="disc">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ul>
+    <h4>Circle 项目符号列表：</h4>
+    <ul type="circle">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ul>
+    <h4>Square 项目符号列表：</h4>
+    <ul type="square">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ul>
+
+    <h4>数字列表：</h4>
+    <ol>
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>字母列表：</h4>
+    <ol type="A">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>小写字母列表：</h4>
+    <ol type="a">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>罗马字母列表：</h4>
+    <ol type="I">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+    <h4>小写罗马字母列表：</h4>
+    <ol type="i">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>柠檬</li>
+        <li>桔子</li>
+    </ol>
+
+    <h4>一个嵌套列表：</h4>
+    <ul>
+        <li>咖啡</li>
+        <li>茶
+            <ul>
+                <li>红茶</li>
+                <li>绿茶</li>
+            </ul>
+        </li>
+        <li>牛奶</li>
+    </ul>
+
+    <h4>一个嵌套列表：</h4>
+    <ul>
+        <li>咖啡</li>
+        <li>茶
+            <ul>
+                <li>红茶</li>
+                <li>绿茶
+                    <ul>
+                        <li>中国茶</li>
+                        <li>非洲茶</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>牛奶</li>
+    </ul>
+
+    <h2>一个定义列表：</h2>
+    <dl>
+        <dt>计算机</dt>
+        <dd>用来计算的仪器 ... ...</dd>
+        <dt>显示器</dt>
+        <dd>以视觉方式显示信息的装置 ... ...</dd>
+    </dl>
+
+    <!--
+        html块:(1)大多数 HTML 元素被定义为块级元素或内联元素。
+                  块级元素在浏览器显示时，通常会以新行来开始（和结束）。例子：<h1>, <p>, <ul>, <table>
+                  内联元素在显示时通常不会以新行开始。例子：<b>, <td>, <a>, <img>
+               (2)HTML <div> 元素是块级元素，它是可用于组合其他 HTML 元素的容器。<div> 元素没有特定的含义。
+                  除此之外，由于它属于块级元素，浏览器会在其前后显示折行。
+                  如果与 CSS 一同使用，<div> 元素可用于对大的内容块设置样式属性。
+                  <div> 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。
+                  使用 <table> 元素进行文档布局不是表格的正确用法。<table> 元素的作用是显示表格化的数据。
+               (3)HTML <span> 元素是内联元素，可用作文本的容器。<span> 元素也没有特定的含义。
+                  当与 CSS 一同使用时，<span> 元素可用于为部分文本设置样式属性。
+            标签	描述
+            <div>	定义文档中的分区或节（division/section）。
+            <span>	定义 span，用来组合文档中的行内元素。
+    -->
+
+    <!--
+        html类：对 HTML 进行分类（设置类），使我们能够为元素的类定义 CSS 样式。
+                为相同的类设置相同的样式，或者为不同的类设置不同的样式。
+                (1)HTML <div> 元素是块级元素。它能够用作其他 HTML 元素的容器。
+                   设置 <div> 元素的类，使我们能够为相同的 <div> 元素设置相同的类。
+                (2)HTML <span> 元素是行内元素，能够用作文本的容器。设置 <span> 元素的类，能够为相同的 <span> 元素设置相同的样式。
+    -->
+    <head>
+        <style>
+            .cities {
+                background-color:saddlebrown;
+                color:white;
+                margin:20px;
+                padding:20px;
+            }
+        </style>
+    </head>
+    <div class="cities">
+        <h2>London</h2>
+        <p>London is the capital city of England.
+            It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.</p>
+    </div>
+    <div class="cities">
+        <h2>Paris</h2>
+        <p>Paris is the capital and most populous city of France.</p>
+    </div>
+    <div class="cities">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+            and the most populous metropolitan area in the world.</p>
+    </div>
+
+    <head>
+        <style>
+            span.red {color:azure;}
+        </style>
+    </head>
+    <h1>My <span class="red">Important</span> Heading</h1>
+
+    <!--
+        html id属性：
+            id 属性指定 HTML 元素的唯一 ID。 id 属性的值在 HTML 文档中必须是唯一的。
+            id 属性用于指向样式表中的特定样式声明。JavaScript 也可使用它来访问和操作拥有特定 ID 的元素。
+            id 的语法是：写一个井号 (#)，后跟一个 id 名称。然后，在花括号 {} 中定义 CSS 属性。
+            下面的例子中我们有一个 <h1> 元素，它指向 id 名称 "myHeader"。
+            这个 <h1> 元素将根据 head 部分中的 #myHeader 样式定义进行样式设置。
+
+        注：（1）id名称对大小写敏感，id必须包含至少一个字符，且不能包含空白字符（空格、制表符等）；
+            （2）同一个类名可以由多个 HTML 元素使用，而一个 id 名称只能由页面中的一个 HTML 元素使用；
+
+    -->
+    <head>
+        <style>
+            #myHeader {
+                background-color: lightblue;
+                color: black;
+                padding: 40px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <h1 id="myHeader">My Header</h1>
+
+    <head>
+    <style>
+        /* 设置 id 为 "myHeader" 的元素的样式 */
+        #myHeader2 {
+            background-color: lightblue;
+            color: black;
+            padding: 40px;
+            text-align: center;
+        }
+        /* 设置类名为 "city" 的所有元素的样式 */
+        .city {
+            background-color: tomato;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+    </head>
+    <!-- 拥有唯一 id 的元素 -->
+    <h1 id="myHeader2">My Cities</h1>
+    <!-- 拥有相同类名的多个元素 -->
+    <h2 class="city">London</h2>
+    <p>London is the capital of England.</p>
+    <h2 class="city">Paris</h2>
+    <p>Paris is the capital of France.</p>
+    <h2 class="city">Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+    <!-- 用id属性创建书签 -->
+    <h2 id="C4">第四章</h2>
+    <a href="#C4">跳转到第四章</a>
+
+    <!-- javascipt使用id操作html的元素 -->
+    <h1>在 JavaScript 中使用 id 属性</h1>
+    <p>JavaScript 可以使用 getElementById() 方法访问具有指定 ID 的元素：</p>
+    <h2 id="myHeader03">Hello World!</h2>
+    <button onclick="displayResult()">改变文本</button>
+    <script>
+        function displayResult() {
+            document.getElementById("myHeader03").innerHTML = "Have a nice day!";
+        }
+    </script>
+
+    <!--
+        html Iframe
+    -->
+    <iframe src="index.html" width="200" height="200"></iframe>
+    <!-- iframe删除边框 -->
+    <iframe src="index.html" frameborder="0"></iframe>
+    <!--
+        iframe 可用作链接的目标(target)
+        链接的 target 属性必须引用 iframe 的 name 属性
+     -->
+    <iframe src="index.html" name="iframe_a"></iframe>
+    <p><a href="http://www.w3school.com.cn" target="iframe_a">W3School.com.cn</a></p>
+
+    <!--
+        html JavaScript:
+            HTML <script> 标签用于定义客户端脚本（JavaScript）。
+            <script> 元素即可包含脚本语句，也可通过 src 属性指向外部脚本文件。
+            JavaScript 的常见用途是图像处理、表单验证和内容的动态更改。
+            如需选取 HTML 元素，JavaScript 最常用 document.getElementById() 方法。
+            这个 JavaScript 示例向 id="demo.txt" 的 HTML 元素内写入 "Hello JavaScript!"
+    -->
+    <!-- 使用JavaScript向元素添加内容，并更改样式 -->
+    <h1>使用 JavaScript 更改文本</h1>
+    <p>本例把 "Hello JavaScript!" 写入 id="demo" 的 HTML 元素内：</p>
+    <p id="demo"></p>
+    <script>
+        document.getElementById("demo.txt").innerHTML = "Hello JavaScript! new style";
+        document.getElementById("demo.txt").style.fontSize = "25px";
+        document.getElementById("demo.txt").style.color = "red";
+        document.getElementById("demo.txt").style.backgroundColor = "yellow";
+    </script>
+
+    <!-- 使用JavaScript点击按钮添加内容 -->
+    <h1>我的第一段 JavaScript</h1>
+    <p>JavaScript 可以更改 HTML 元素的内容：</p>
+    <button type="button" onclick="myFunction()">点击我！</button>
+    <p id="demo2">这是一个演示。</p>
+    <script>
+        function myFunction() {
+            document.getElementById("demo2").innerHTML = "Hello JavaScript!";
+        }
+    </script>
+
+    <!--
+        使用JavaScript改变图片,通过修改图片的链接实现
+            标签	描述
+            <script>	定义客户端脚本。
+            <noscript>	为不支持客户端脚本的用户定义替代内容。
+     -->
+    <script>
+        function light(sw) {
+            var pic;
+            if (sw == 0) {
+                pic = "../../assets/bulboff.png"
+            } else {
+                pic = "../../assets/bulbon.png"
+            }
+            document.getElementById('myImage').src = pic;
+        }
+    </script>
+    <img id="myImage" src="../../assets/bulboff.png" width="109" height="180">
+    <p>
+        <button type="button" onclick="light(1)">开灯</button>
+        <button type="button" onclick="light(0)">关灯</button>
+    </p>
+    <!-- <noscript> 显示给在浏览器中禁用了脚本或浏览器不支持脚本的用户 -->
+    <p id="demo3"></p>
+    <script>
+        document.getElementById("demo3").innerHTML = "Hello JavaScript!";
+    </script>
+    <noscript>抱歉，您的浏览器不支持 JavaScript！</noscript>
+    <p>不支持 JavaScript 的浏览器将显示 noscript 元素内的文本。</p>
+
+    <!--
+        html路径：文件路径描述了网站文件夹结构中某个文件的位置,文件路径会在链接外部文件时被用到(网页、图像、样式表、JavaScript)
+            路径	                        描述
+            <img src="picture.jpg">	        picture.jpg 位于与当前网页相同的文件夹
+            <img src="images/picture.jpg">	picture.jpg 位于当前文件夹的 images 文件夹中
+            <img src="/images/picture.jpg">	picture.jpg 当前站点根目录的 images 文件夹中
+            <img src="../picture.jpg">	    picture.jpg 位于当前文件夹的上一级文件夹中
+    -->
+    <img src="https://www.w3school.com.cn/images/picture.jpg" alt="图片显示错误">
+    <img src="../../assets/logo.png" alt="图片显示错误">
+
+    <!--
+        html布局:
+            (1)使用<div>布局，可对CSS对其进行定位:
+            (2)html5语义元素:
+                header	定义文档或节的页眉
+                nav	定义导航链接的容器
+                section	定义文档中的节
+                article	定义独立的自包含文章
+                aside	定义内容之外的内容（比如侧栏）
+                footer	定义文档或节的页脚
+                details	定义额外的细节
+                summary	定义 details 元素的标题
+            (3)使用css布局
+     -->
+    <style>
+        #header {
+            background-color:black;
+            color:white;
+            text-align:center;
+            padding:5px;
+        }
+        #nav {
+            line-height:30px;
+            background-color:#eeeeee;
+            height:300px;
+            width:100px;
+            float:left;
+            padding:5px;
+        }
+        #section {
+            width:350px;
+            float:left;
+            padding:10px;
+        }
+        #footer {
+            background-color:black;
+            color:white;
+            clear:both;
+            text-align:center;
+            padding:5px;
+        }
+    </style>
+    <div id="header">
+        <h1>City Gallery</h1>
+    </div>
+    <div id="nav">
+        London<br>
+        Paris<br>
+        Tokyo<br>
+    </div>
+    <div id="section">
+        <h1>London</h1>
+        <p>
+            London is the capital city of England. It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.
+        </p>
+        <p>
+            Standing on the River Thames, London has been a major settlement for two millennia,
+            its history going back to its founding by the Romans, who named it Londinium.
+        </p>
+    </div>
+    <div id="footer">
+        Copyright W3School.com.cn
+    </div>
+
+
+    <style>
+        table.lamp {
+            width:100%;
+            border:1px solid #d4d4d4;
+        }
+        table.lamp th, td {
+            padding:10px;
+        }
+        table.lamp td {
+            width:40px;
+        }
+    </style>
+    <table class="lamp">
+        <tr>
+            <th>
+                <img src="../../assets/dog.gif" alt="Note" style="height:200px;width:200px">
+            </th>
+            <td>
+                The table element was not designed to be a layout tool.
+            </td>
+        </tr>
+    </table>
+
+    <!--
+        html响应式Web设计:
+            RWD 指的是响应式 Web 设计（Responsive Web Design）
+            RWD 能够以可变尺寸传递网页
+            RWD 对于平板和移动设备是必需的
+
+        另一个创建响应式设计的方法，是使用现成的 CSS 框架。
+        Bootstrap 是最流行的开发响应式 web 的 HTML, CSS, 和 JS 框架。
+        Bootstrap 帮助您开发在任何尺寸都外观出众的站点：显示器、笔记本电脑、平板电脑或手
+     -->
+
+    <style>
+        .city {
+            float: left;
+            margin: 5px;
+            padding: 15px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        /*用于换行*/
+        .city4 {
+            clear: both;
+        }
+    </style>
+    <h1>W3School Demo</h1>
+    <h2>Resize this responsive page!</h2>
+    <br>
+
+    <div class="city">
+        <h2>London</h2>
+        <p>London is the capital city of England.</p>
+        <p>It is the most populous city in the United Kingdom,
+            with a metropolitan area of over 13 million inhabitants.</p>
+    </div>
+
+    <div class="city">
+        <h2>Paris</h2>
+        <p>Paris is the capital and most populous city of France.</p>
+    </div>
+
+    <div class="city">
+        <h2>Tokyo</h2>
+        <p>Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+            and the most populous metropolitan area in the world.</p>
+    </div>
+    <div class="city4"></div>
+
+    <!--
+        html计算机代码元素:
+            通常，HTML 使用可变的字母尺寸，以及可变的字母间距。
+            在显示计算机代码示例时，并不需要如此。
+            <kbd>, <samp>, 以及 <code> 元素全都支持固定的字母尺寸和间距。
+        标签	描述
+        <code>	定义计算机代码文本
+        <kbd>	定义键盘文本
+        <samp>	定义计算机代码示例
+        <var>	定义变量
+        <pre>	定义预格式化文本
+    -->
+    <body style="font-size:16px">
+        <p>HTML kbd 元素表示键盘输入：</p>
+        <p><kbd>File | Open...</kbd></p>
+    </body>
+
+    <body style="font-size:16px">
+    <p>HTML samp 元素表示计算机输出示例：</p>
+        <samp>
+            demo.example.com login: Apr 12 09:10:17
+            Linux 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189
+        </samp>
+    </body>
+
+    <body style="font-size:16px">
+        <p>编程代码示例：</p>
+        <code>
+            var person = {firstName:"Bill", lastName:"Gats", age:50}
+        </code>
+    </body>
+
+    <body style="font-size:16px">
+    <p>code 元素不保留多余的空格和折行：</p>
+    <p>如需解决该问题，您必须在 pre 元素中包围代码：</p>
+    <code>
+        <pre>
+        var person = {
+            firstName:"Bill",
+            lastName:"Gates",
+            age:50,
+            eyeColor:"blue"
+        }
+        </pre>
+    </code>
+    </body>
+
+    <body style="font-size:16px">
+        <p>爱因斯坦的公式：</p>
+        <p><var>E</var> = <var>m</var> <var>c</var><sup>2</sup></p>
+    </body>
+
+    <!--
+        html5语义元素:
+            语义元素清楚地向浏览器和开发者描述其意义。
+            非语义元素的例子：<div> 和 <span> - 无法提供关于其内容的信息。
+            语义元素的例子：<form>、<table> 以及 <img> - 清晰地定义其内容。
+            所有现代浏览器均支持 HTML5 语义元素。
+        标签	        描述
+        <article>	    定义文章。
+        <aside>	        定义页面内容以外的内容。
+        <details>	    定义用户能够查看或隐藏的额外细节。
+        <figcaption>	定义 <figure> 元素的标题。
+        <figure>	    规定自包含内容，比如图示、图表、照片、代码清单等。
+        <footer>	    定义文档或节的页脚。
+        <header>	    规定文档或节的页眉。
+        <main>	        规定文档的主内容。
+        <mark>	        定义重要的或强调的文本。
+        <nav>	        定义导航链接。
+        <section>	    定义文档中的节。
+        <summary>	    定义 <details> 元素的可见标题。
+        <time>	        定义日期/时间。
+     -->
+    <!--
+        <section> 元素定义文档中的节。
+            根据 W3C 的 HTML 文献：“节（section）是有主题的内容组，通常具有标题”。
+            可以将网站首页划分为简介、内容、联系信息等节。
+    -->
+    <section>
+        <h1>WWF</h1>
+        <p>The World Wide Fund for Nature (WWF) is....</p>
+    </section>
+
+    <article>
+        <h1>What Does WWF Do?</h1>
+        <p>WWF's mission is to stop the degradation of our planet's natural environment,
+            and build a future in which humans live in harmony with nature.</p>
+    </article>
+    <!--
+        HTML5 <header> 元素
+            <header> 元素为文档或节规定页眉。
+            <header> 元素应该被用作介绍性内容的容器。
+            一个文档中可以有多个 <header> 元素。
+            标签	        描述
+            <article>	    定义文章。
+            <aside>	        定义页面内容以外的内容。
+            <details>	    定义用户能够查看或隐藏的额外细节。
+            <figcaption>	定义 <figure> 元素的标题。
+            <figure>	    规定自包含内容，比如图示、图表、照片、代码清单等。
+            <footer>	    定义文档或节的页脚。
+            <header>	    规定文档或节的页眉。
+            <main>	        规定文档的主内容。
+            <mark>	        定义重要的或强调的文本。
+            <nav>	        定义导航链接。
+            <section>	    定义文档中的节。
+            <summary>	    定义 <details> 元素的可见标题。
+            <time>	        定义日期/时间。
+     -->
+    <article>
+        <header>
+            <h1>What Does WWF Do?</h1>
+            <p>WWF's mission:</p>
+        </header>
+        <p>WWF's mission is to stop the degradation of our planet's natural environment,
+            and build a future in which humans live in harmony with nature.</p>
+    </article>
+    <!--
+        HTML5 <footer> 元素
+            <footer> 元素为文档或节规定页脚。
+            <footer> 元素应该提供有关其包含元素的信息。
+            页脚通常包含文档的作者、版权信息、使用条款链接、联系信息等等。
+            您可以在一个文档中使用多个 <footer> 元素。
+     -->
+    <footer>
+        <p>Posted by: Hege Refsnes</p>
+        <p>Contact information: <a href="mailto:someone@example.com">
+            someone@example.com</a>.</p>
+    </footer>
+    <!--
+        HTML5 <nav> 元素
+            <nav> 元素定义导航链接集合。
+            <nav> 元素旨在定义大型的导航链接块。不过，并非文档中所有链接都应该位于 <nav> 元素中！
+     -->
+    <nav>
+        <a href="/html/">HTML</a> |
+        <a href="/css/">CSS</a> |
+        <a href="/js/">JavaScript</a> |
+        <a href="/jquery/">jQuery</a>
+    </nav>
+    <!--
+        HTML5 <aside> 元素
+            <aside> 元素页面主内容之外的某些内容（比如侧栏）。
+            aside 内容应该与周围内容相关。
+    -->
+    <p>My family and I visited The Epcot center this summer.</p>
+    <aside>
+        <h4>Epcot Center</h4>
+        <p>The Epcot Center is a theme park in Disney World, Florida.</p>
+    </aside>
+    <!--
+        HTML5 <figure> 和 <figcaption> 元素
+            在书籍和报纸中，与图片搭配的标题很常见。
+            标题（caption）的作用是为图片添加可见的解释。
+            通过 HTML5，图片和标题能够被组合在 <figure> 元素中：
+     -->
+    <figure>
+        <img src="../../assets/logo.png" alt="The Pulpit Rock" width="304" height="228">
+        <figcaption>Fig1. - The Pulpit Pock, Norway.</figcaption>
+    </figure>
+
+    <!--
+        html5最佳实践、样式指南和代码约定：
+             1.使用正确的文档类型
+             2.使用小写元素名
+             3.关闭所有元素名
+             4.关闭空html元素，在XHTML和XML中是必须的
+             5.使用小写属性名
+             6.属性值加引号
+             7.必须的属性:
+                始终对图像使用alt属性；
+                始终定义图像尺寸，这样会减少闪烁，因为浏览器会在图像加载之前为图像预留空间；
+             8.建议等号两端不加空格
+             9.避免长代码行，80字符
+             10.空行和缩进:
+                    为了提高可读性，请增加空行来分隔大型或逻辑代码块。
+                    为了提高可读性，请增加两个空格的缩进。请勿使用 TAB。
+                    请勿使用没有必要的空行和缩进。没有必要在短的和相关项目之间使用空行，也没有必要缩进每个元素。
+             11.不能省略<html>和<body>:
+                    省略 <html> 或 <body> c可令 DOM 和 XML 软件崩溃。
+                    省略 <body> 会在老式浏览器（IE9）中产生错误。
+                <head>可以省略，浏览器会默认把之前所有元素添加到默认的<head>元素
+             12.title是必须的
+             13.对文档中的语言和字符编码定义的越早越好:<html lang="en-US">
+             14.样式表:
+                    用简单的语法来链接样式表（type 属性不是必需的）:<link rel="stylesheet" href="styles.css">
+                    短规则可以压缩为一行：p.into {font-family:"Verdana"; font-size:16em;}
+                    长规则应该分为多行：
+                            body {
+                              background-color: lightgrey;
+                              font-family: "Arial Black", Helvetica, sans-serif;
+                              font-size: 16em;
+                              color: black;
+                            }
+                    注: 开括号与选择器位于同一行
+                        在开括号之前用一个空格
+                        使用两个字符的缩进
+                        在每个属性与其值之间使用冒号加一个空格
+                        在每个逗号或分号之后使用空格
+                        在每个属性值对（包括最后一个）之后使用分号
+                        只在值包含空格时使用引号来包围值
+                        把闭括号放在新的一行，之前不用空格
+                        避免每行超过 80 个字符
+               注：在逗号或分号之后添加空格，是所有书写类型的通用规则。
+             15.使用小写文件名：
+                    大多数 web 服务器（Apache、Unix）对文件名的大小写敏感：不能以 london.jpg 访问 London.jpg。
+                    其他 web 服务器（微软，IIS）对大小写不敏感：能够以 london.jpg 或 London.jpg 访问 London.jpg。
+                    如果您从对大小写不敏感的服务器转到一台对大小写敏感的服务器上，这些小错误将破坏您的网站。
+                    为了避免这些问题，请始终使用小写文件名（如果可以的话）。
+             16.文件扩展名:
+                    HTML 文件名应该使用扩展名 .html（而不是 .htm）。
+                    CSS 文件应该使用扩展名 .css。
+                    JavaScript 文件应该使用扩展名 .resources
+     -->
+    <!DOCTYPE html>
+    <!doctype html>
+
+    <section>
+        <p>This is a paragraph.</p>
+    </section>
+
+    <meta charset="utf-8" />
+    <div class="menu"></div>
+    <img src="html5.gif" alt="HTML5" style="width:128px;height:128px">
+
+    <!-- 缩进示例 -->
+    <body>
+
+    <h1>Famous Cities</h1>
+    <h2>Tokyo</h2>
+
+    <p>
+        Tokyo is the capital of Japan, the center of the Greater Tokyo Area,
+        and the most populous metropolitan area in the world.
+        It is the seat of the Japanese government and the Imperial Palace,
+        and the home of the Japanese Imperial Family.
+    </p>
+
+    <!-- 表格示例 -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        <tr>
+        <tr>
+            <td>A</td>
+            <td>Description of A</td>
+        <tr>
+        <tr>
+            <td>B</td>
+            <td>Description of B</td>
+        <tr>
+    </table>
+
+    <!-- 列表示例 -->
+    <ol>
+        <li>LondonA</li>
+        <li>Paris</li>
+        <li>Tokyo</li>
+    </ol>
+
+    </body>
+
+    <!--
+         html字符实体：
+            HTML 中的预留字符（关键字）必须被替换为字符实体。
+
+         html实体：
+            在 HTML 中，某些字符是预留的。
+            在 HTML 中不能使用小于号（<）和大于号（>），这是因为浏览器会误认为它们是标签。
+            如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体，&entity_name或者&#entity_number。小于号 -- &lt 或 &#60
+
+         不间断空格：
+            HTML 中的常用字符实体是不间断空格(&nbsp;)。
+            浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。
+            如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体
+
+        显示结果	描述	        实体名称	        实体编号
+                空格	        &nbsp;	        &#160;
+        <	    小于号	        &lt;	        &#60;
+        >	    大于号	        &gt;	        &#62;
+        &	    和号	        &amp;	        &#38;
+        "	    引号	        &quot;	        &#34;
+        '	    撇号 	        &apos; (IE不支持)&#39;
+        ￠	    分（cent）	    &cent;	        &#162;
+        £	    镑（pound）	    &pound;	        &#163;
+        ¥	    元（yen）	    &yen;	        &#165;
+        €	    欧元（euro）	    &euro;	        &#8364;
+        §	    小节	        &sect;	        &#167;
+        ©	    版权（copyright）&copy;	        &#169;
+        ®	    注册商标	        &reg;	        &#174;
+        ™	    商标	        &trade;	        &#8482;
+        ×	    乘号	        &times;	        &#215;
+        ÷	    除号	        &divide;	    &#247;
+     -->
+
+    <!--
+        html符号：
+            html支持的一些数学符号：
+                字符	数字	实体	描述
+                ∀	&#8704;	&forall;	FOR ALL
+                ∂	&#8706;	&part;	PARTIAL DIFFERENTIAL
+                ∃	&#8707;	&exist;	THERE EXISTS
+                ∅	&#8709;	&empty;	EMPTY SETS
+                ∇	&#8711;	&nabla;	NABLA
+                ∈	&#8712;	&isin;	ELEMENT OF
+                ∉	&#8713;	&notin;	NOT AN ELEMENT OF
+                ∋	&#8715;	&ni;	CONTAINS AS MEMBER
+                ∏	&#8719;	&prod;	N-ARY PRODUCT
+                ∑	&#8721;	&sum;	N-ARY SUMMATION
+           html支持的一些希腊字母：
+                字符	数字	实体	描述
+                Α	&#913;	&Alpha;	GREEK CAPITAL LETTER ALPHA
+                Β	&#914;	&Beta;	GREEK CAPITAL LETTER BETA
+                Γ	&#915;	&Gamma;	GREEK CAPITAL LETTER GAMMA
+                Δ	&#916;	&Delta;	GREEK CAPITAL LETTER DELTA
+                Ε	&#917;	&Epsilon;	GREEK CAPITAL LETTER EPSILON
+                Ζ	&#918;	&Zeta;	GREEK CAPITAL LETTER ZETA
+           html支持的一些其他实体：
+                字符	数字	实体	描述
+                ©	&#169;	&copy;	COPYRIGHT SIGN
+                ®	&#174;	&reg;	REGISTERED SIGN
+                €	&#8364;	&euro;	EURO SIGN
+                ™	&#8482;	&trade;	TRADEMARK
+                ←	&#8592;	&larr;	LEFTWARDS ARROW
+                ↑	&#8593;	&uarr;	UPWARDS ARROW
+                →	&#8594;	&rarr;	RIGHTWARDS ARROW
+                ↓	&#8595;	&darr;	DOWNWARDS ARROW
+                ♠	&#9824;	&spades;	BLACK SPADE SUIT
+                ♣	&#9827;	&clubs;	BLACK CLUB SUIT
+                ♥	&#9829;	&hearts;	BLACK HEART SUIT
+                ♦	&#9830;	&diams;	BLACK DIAMOND SUIT
+           html支持的表情符号
+                    表情符号（Emoji）是来自 UTF-8 字符集的字符：😄 😍 💗），表情符号（Emoji）类似图像或图标，但它们并不是。它们是
+                    来自 UTF-8 (Unicode) 字符集的字母（字符）。UTF-8 几乎涵盖世界上所有字符和符号。为了正确显示 HTML 页面，Web
+                    浏览器必须知道页面中使用的字符集。<meta charset="UTF-8">，如果未规定，UTF-8 则是 HTML 中的默认字符集。很多
+                    UTF-8 字符无法在键盘上键入，但始终可以使用数字（被称为实体编号）来显示它们。
+
+                Emoji	值
+                🗻	&#128507;
+                🗼	&#128508;
+                🗽	&#128509;
+                🗾	&#128510;
+                🗿	&#128511;
+                😀	&#128512;
+                😁	&#128513;
+                😂	&#128514;
+                😃	&#128515;
+                😄	&#128516;
+                😅	&#128517;
+
+    -->
+    <p>我将显示 &</p>
+    <p>我将显示 &#8364;</p>
+    <p>我将显示 &#x20AC;</p>
+
+<!--    必须以 &# 开头并以 ;（分号）结束实体编号。-->
+    <p>我将显示 A B C</p>
+    <p>我将显示 &#65; &#66; &#67;</p>
+
+    <h1>我的第一个 Emoji</h1>
+    <p>&#128512;</p>
+<!--    由于表情符号是字符，因此可以像 HTML 中的其他任何字符一样复制、显示和调整它们的大小。-->
+
+    <h1>放大的表情符号</h1>
+    <p style="font-size:48px">
+        &#128512; &#128516; &#128525; &#128151;
+    </p>
+
+    <!--
+        从 ASCII 到 UTF-8（对照表见附录resource）:
+            ASCII 是第一个字符编码标准。ASCII 定义了 128 种可以在互联网上使用的字符：数字（0-9）、英文字母（A-Z）和一些特殊字符，比如：! $ + - ( ) @ < >。
+            ISO-8859-1 是 HTML 4 的默认字符集。此字符集支持 256 个不同的字符代码。HTML 4 同时支持 UTF-8。
+            ANSI（Windows-1252）是原始的 Windows 字符集。 ANSI 与 ISO-8859-1 相同，不同之处在于 ANSI 具有 32 个额外的字符。
+            HTML5 规范鼓励 Web 开发人员使用 UTF-8 字符集，该字符集涵盖了世界上几乎所有的字符和符号！
+
+            ASCII 字符集：
+                ASCII 使用 0 到 31（以及 127）之间的值作为控制字符。
+                ASCII 使用 32 到 126 的值表示字母、数字和符号。
+                ASCII 不使用 128 到 255 之间的值。
+            ANSI 字符集 (Windows-1252)：
+                对于 0 到 127 的值，ANSI 与 ASCII 相同。
+                ANSI 有一组专有的字符，其值从 128 到 159。
+                对于 160 到 255 的值，ANSI 与 UTF-8 相同。
+            ISO-8859-1 字符集：
+                对于 0 到 127 的值，8859-1 与 ASCII 相同。
+                8859-1 不使用 128 到 159 之间的值。
+                对于从 160 到 255 的值，8859-1 与 UTF-8 相同。
+            UTF-8 字符集：
+                对于 0 到 127 的值，UTF-8 与 ASCII 相同。
+                UTF-8 不使用 12 8到 159 之间的值。
+                对于 160 到 255 之间的值，UTF-8 与 ANSI 和 8859-1 相同。
+                UTF-8 从值 256 继续，包含超过 10000 个不同字符。
+
+            注：将样式表的编码设置为 Unicode UTF-8：@charset "UTF-8";
+     -->
+
+    <!--
+        URL 也被称为网址:
+            URL 可以由单词组成，比如 “w3school.com.cn”，或者是因特网协议（IP）地址：192.168.1.253。
+
+        统一资源定位器（URL）用于定位万维网上的文档（或其他数据）。
+            网址，比如 http://www.w3school.com.cn/html/index.asp，遵守以下的语法规则：scheme://host.domain:port/path/filename
+        解释：
+            scheme - 定义因特网服务的类型。最常见的类型是 http
+            host - 定义域主机（http 的默认主机是 www）
+            domain - 定义因特网域名，比如 w3school.com.cn
+            :port - 定义主机上的端口号（http 的默认端口号是 80）
+            path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
+            filename - 定义文档/资源的名称
+
+        一些最流行的 URL scheme：
+        Scheme	访问	            用途
+        http	超文本传输协议	    以 http:// 开头的普通网页。不加密。
+        https	安全超文本传输协议	安全网页。加密所有信息交换。
+        ftp	    文件传输协议	        用于将文件下载或上传至网站。
+        file	                    您计算机上的文件。
+
+        URL 编码:
+            URL 只能使用 ASCII 字符集来通过因特网进行发送。
+            由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。
+            URL 编码使用 "%" 其后跟随两位的十六进制数来替换非 ASCII 字符。
+            URL 不能包含空格。URL 编码通常使用 + 来替换空格。
+        注：可以在https://www.w3school.com.cn/html/html_urlencode.asp测试浏览器对输入url编码之后的url，服务器上的页面会显示接收到的输入；
+    -->
+
+    <!--
+        html框架：
+            通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。
+        框架结构标签（<frameset>）：
+            框架结构标签（<frameset>）定义如何将窗口分割为框架
+            每个 frameset 定义了一系列行或列
+            rows/columns 的值规定了每行或每列占据屏幕的面积
+            假如一个框架有可见边框，用户可以拖动边框来改变它的大小。可以在 <frame> 标签中加入：noresize="noresize"，避免可见框。
+        注:
+            不能将 <body></body> 标签与 <frameset></frameset> 标签同时使用！不过，假如你添加包含一段文本的 <noframes> 标签，
+            就必须将这段文字嵌套于 <body></body> 标签内。
+    -->
+
+    <!--
+        html背景：
+            <body> 拥有两个配置背景的标签。背景可以是颜色或者图像。
+                背景颜色（Bgcolor）属性将背景设置为某种颜色。属性值可以是十六进制数、RGB 值或颜色名。
+                    <body bgcolor="#000000">
+                    <body bgcolor="rgb(0,0,0)">
+                    <body bgcolor="black">
+                背景（Background）属性将背景设置为图像。属性值为图像的URL。如果图像尺寸小于浏览器窗口，那么图像将在整个浏览器窗口进行复制。
+                    <body background="clouds.gif">
+                    <body background="http://www.w3school.com.cn/clouds.gif">
+             注：
+             <body> 标签中的背景颜色（bgcolor）、背景（background）和文本（text）属性在最新的 HTML 标准（HTML4 和 XHTML）中已被废弃。
+             W3C 在他们的推荐标准中已删除这些属性。应该使用层叠样式表（CSS）来定义 HTML 元素的布局和显示属性。
+    -->
+
+    <!--
+        html web server:使用因特网服务提供商(ISP)
+     -->
+
+    <!--
+        HTML <!DOCTYPE>:
+            Web 世界中存在许多不同的文档。只有了解文档的类型，浏览器才能正确地显示文档。
+            HTML 也有多个不同的版本，只有完全明白页面中使用的确切 HTML 版本，浏览器才能完全正确地显示出 HTML 页面。这就是 <!DOCTYPE> 的用处。
+            <!DOCTYPE> 不是 HTML 标签。它为浏览器提供一项信息（声明），即 HTML 是用什么版本编写的。
+        常用声明：
+            HTML5:
+            <!DOCTYPE html>
+
+            HTML 4.01:
+            <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+            "http://www.w3.org/TR/html4/loose.dtd">
+
+            XHTML 1.0:
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+     -->
+
+    </body>
+
+
+</html>

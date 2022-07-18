@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            CSS外边距：
+            所有 CSS 外边距属性
+            属性	            描述
+            margin	            用于在一条声明中设置外边距属性的简写属性。
+            margin-bottom	    设置元素的下外边距。
+            margin-left	        设置元素的左外边距。
+            margin-right	    设置元素的右外边距。
+            margin-top	        设置元素的上外边距。
+        */
+
+    </style>
+    <style>
+        div.t1 {
+            margin: 70px;
+            border: 1px solid #000000;
+        }
+    </style>
+    <style>
+        div.t2 {
+            border: 1px solid black;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px;
+            background-color: lightblue;
+        }
+        /* 简写属性值 */
+        div.t3 {
+            border: 1px solid black;
+            margin: 25px 50px 75px 100px;
+            /*margin: 25px 50px 75px;*/
+            /*margin: 25px 50px;*/
+            /*margin: 25px;*/
+            /*margin: auto;*/
+            background-color: lightblue;
+        }
+    </style>
+    <style>
+        div.t4 {
+            border: 1px solid red;
+            margin-left: 100px;
+        }
+
+        p.ex1 {
+            margin-left: inherit;
+        }
+    </style>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        #d1 {
+            width:100px;
+            height:100px;
+            margin-top:20px;
+            margin-bottom:20px;
+            background-color:red;
+        }
+        #d2 {
+            width:100px;
+            height:100px;
+            margin-top:10px;
+            background-color:blue;
+        }
+    </style>
+    <style type="text/css">
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+        #outer {
+            width:300px;
+            height:300px;
+            background-color:red;
+            margin-top:20px;
+        }
+        #inner {
+            width:50px;
+            height:50px;
+            background-color:blue;
+            margin-top:10px;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1>CSS 外边距</h1>
+<div class="t1">本元素的外边距为 70 像素。</div>
+
+<h1>使用单独的外边距属性</h1>
+<div class="t2">这个 div 元素的上外边距为 100 像素，右外边距是 150 像素，下外边距是 100 像素，左外边距是 80 像素。</div>
+
+<h1>简写属性 margin - 4 个值</h1>
+<div class="t3">这个 div 元素的上外边距是 25 像素，右外边距是 50 像素，下外边距是 75 像素，左外边距是 100 像素。</div>
+
+<h1>使用继承值</h1>
+<p>左外边距继承自父元素：</p>
+<div class="t4">
+    <p class="ex1">本段落继承了 div 元素的左外边距。</p>
+</div>
+
+<div id="d1"></div>
+<div id="d2"></div>
+<p>请注意，两个 div 之间的外边距是 20px，而不是 30px（20px + 10px）。</p>
+
+<div id="outer">
+    <div id="inner"></div>
+</div>
+<p>注释：请注意，如果不设置 div 的内边距和边框，那么内部 div 的上外边距将与外部 div 的上外边距合并（叠加）。</p>
+</body>
+</html>

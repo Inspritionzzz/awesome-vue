@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            2.CSS选择器:用于“查找”（或选取）要设置样式的 HTML 元素。
+                2.5 属性选择器（根据属性或属性值来选取元素）
+                所有 CSS 属性选择器
+                    选择器	            例子	            例子描述
+                    [attribute]	        [target]	        选择带有 target 属性的所有元素。
+                    [attribute=value]	[target=_blank]	    选择带有 target="_blank" 属性的所有元素。
+                    [attribute~=value]	[title~=flower]	    选择带有包含 "flower" 一词的 title 属性的所有元素。
+                    [attribute|=value]	[lang|=en]	        选择带有以 "en" 开头的 lang 属性的所有元素。
+                    [attribute^=value]	a[href^="https"]	选择其 href 属性值以 "https" 开头的每个 <a> 元素。
+                    [attribute$=value]	a[href$=".pdf"]	    选择其 href 属性值以 ".pdf" 结尾的每个 <a> 元素。
+                    [attribute*=value]	a[href*="w3school"]	选择其 href 属性值包含子串 "w3school" 的每个 <a> 元素。
+        */
+    </style>
+</head>
+<body>
+<!--
+    [attribute] 选择器用于选取带有指定属性的元素。
+    下例选择所有带有 target 属性的 <a> 元素；
+ -->
+<style>
+    #num1
+    a[target] {
+        background-color: yellow;
+    }
+</style>
+<div id="num1">
+<h1>CSS [attribute] 选择器</h1>
+<p>带有 target 属性的链接获得颜色背景：</p>
+<a href="https://www.w3school.com">w3school.com.cn</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+</div>
+<!--
+    [attribute="value"] 选择器用于选取带有指定属性和值的元素。
+    下例选取所有带有 target="_blank" 属性的 <a> 元素
+ -->
+<style>
+    #num2
+    a[target=_blank] {
+        background-color: yellow;
+    }
+</style>
+<div id="num2">
+<h1>CSS [attribute="value"] 选择器</h1>
+<p>target="_blank" 的链接会有黄色背景：</p>
+<a href="https://www.w3school.com.cn">w3school.com.cn</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+</div>
+<!--
+    [attribute~="value"] 选择器选取属性值包含指定词的元素。
+    下例选取 title 属性包含 "flower" 单词的所有元素
+ -->
+<style>
+    #num3
+    [title~=flower] {
+        border: 5px solid yellow;
+    }
+</style>
+<div id="num3">
+<h1>CSS [attribute~="value"] 选择器</h1>
+<p>title 属性包含 "flower" 的所有图像会有黄色边框。</p>
+<img src="/i/photo/klematis.jpg" title="klematis flower" width="150" height="113">
+<img src="/i/photo/flower.gif" title="flower" width="224" height="162">
+<img src="/i/photo/tree.png" title="tree" width="200" height="358">
+</div>
+<!--
+    [attribute|="value"] 选择器用于选取指定属性以指定值开头的元素。
+    下例选取 class 属性以 "top" 开头的所有元素：
+    注释：值必须是完整或单独的单词，比如 class="top" 或者后跟连字符的，比如 class="top-text"
+ -->
+<style>
+    #num4
+    [class|=top] {
+        background: yellow;
+    }
+</style>
+<div id="num4">
+    <h1>CSS [attribute|="value"] 选择器</h1>
+    <h1 class="top-header">Welcome</h1>
+    <p class="top-text">Hello world!</p>
+    <p class="topcontent">Are you learning CSS?</p>
+</div>
+<!--
+    [attribute^="value"] 选择器用于选取指定属性以指定值开头的元素。
+    下例选取 class 属性以 "top" 开头的所有元素：
+    提示：值不必是完整单词！
+ -->
+<style>
+    #num5
+    [class^="top"] {
+        background: yellow;
+    }
+</style>
+<div id="num5">
+<h1>CSS [attribute^="value"] 选择器</h1>
+<h1 class="top-header">Welcome</h1>
+<p class="top-text">Hello world!</p>
+<p class="topcontent">Are you learning CSS?</p>
+</div>
+
+<!--
+    设置表单样式,若需为不带 class 或 id 的表单设置样式，属性选择器会很有用
+ -->
+<style>
+    input[type=text] {
+        width: 150px;
+        display: block;
+        margin-bottom: 10px;
+        background-color: yellow;
+    }
+
+    input[type=button] {
+        width: 120px;
+        margin-left: 35px;
+        display: block;
+    }
+</style>
+<h1>添加表单样式</h1>
+<form name="input" action="" method="get">
+    Firstname:<input type="text" name="Name" value="Bill" size="20">
+    Lastname:<input type="text" name="Name" value="Gates" size="20">
+    <input type="button" value="Example Button">
+</form>
+</body>
+</html>

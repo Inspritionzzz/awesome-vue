@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            3.当浏览器读到样式表时，它将根据样式表中的信息来格式化 HTML 文档
+                 3.1外部 CSS
+                 3.2内部 CSS
+                 3.3行内 CSS
+            注：多个样式表--如果在不同样式表中为同一选择器（元素）定义了一些属性，则将使用最后读取的样式表中的值（按照代码顺序读取）。
+
+            层叠顺序：
+                当为某个 HTML 元素指定了多个样式时，会使用哪种样式呢？
+                页面中的所有样式将按照以下规则“层叠”为新的“虚拟”样式表，其中第一优先级最高：
+                    1 行内样式（在 HTML 元素中）
+                    2 外部和内部样式表（在 head 部分）
+                    3 浏览器默认样式
+                因此，行内样式具有最高优先级，并且将覆盖外部和内部样式以及浏览器默认样式。
+        */
+    </style>
+    <!--
+        3.1通过使用外部样式表，您只需修改一个文件即可改变整个网站的外观！
+           每张 HTML 页面必须在 head 部分的 <link> 元素内包含对外部样式表文件的引用。
+
+           注:外部样式表可以在任何文本编辑器中编写，并且必须以 .css 扩展名保存。
+              外部 .css 文件不应包含任何 HTML 标签。
+     -->
+    <link rel="stylesheet" href="../resource/mystyle.css">
+    <!--
+        3.2如果一张 HTML 页面拥有唯一的样式，那么可以使用内部样式表。内部样式是在 head 部分的 <style> 元素中进行定义
+     -->
+    <style>
+        body {
+            background-color: linen;
+        }
+        h1 {
+            color: maroon;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+    <!--
+        3.3行内样式（也称内联样式）可用于为单个元素应用唯一的样式。
+        如需使用行内样式，请将 style 属性添加到相关元素。style 属性可包含任何 CSS 属性。
+        提示：行内样式失去了样式表的许多优点（通过将内容与呈现混合在一起）。请谨慎使用此方法。
+     -->
+<h1 style="color:blue;text-align:center;">This is a heading</h1>
+<p style="color:red;">This is a paragraph.</p>
+</body>
+</html>

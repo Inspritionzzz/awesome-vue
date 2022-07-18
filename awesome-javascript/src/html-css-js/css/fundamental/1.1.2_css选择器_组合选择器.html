@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<style>
+    /*
+        2.CSS选择器:用于“查找”（或选取）要设置样式的 HTML 元素。
+                2.2 组合器选择器（根据它们之间的特定关系来选取元素）
+                    后代选择器 (空格)：选择某元素所有的后代元素
+                    子选择器 (>)：选择某元素所有的子元素
+                    相邻兄弟选择器 (+)：选择指定元素相邻同级元素
+                    通用兄弟选择器 (~)：选择指定元素的同级所有元素
+                所有 CSS 组合选择器
+                    选择器	            示例	    示例描述
+                    element element	    div p	    选择 <div> 元素内的所有 <p> 元素。
+                    element>element	    div > p	    选择其父元素是 <div> 元素的所有 <p> 元素。
+                    element+element	    div + p	    选择所有紧随 <div> 元素之后的 <p> 元素。
+                    element1~element2	p ~ ul	    选择前面有 <p> 元素的每个 <ul> 元素。
+
+    */
+</style>
+<style>
+    #num1
+        /*后代选择器 (空格)*/
+    div p {
+        background-color: yellow;
+    }
+    #num2
+        /*子选择器 (>)*/
+    div > p {
+        background-color: yellow;
+    }
+    #num3
+        /*相邻兄弟选择器 (+)*/
+    div + p {
+        background-color: yellow;
+    }
+    #num4
+        /*通用兄弟选择器 (~)*/
+    div ~ p {
+        background-color: yellow;
+    }
+</style>
+
+<div id="num1">
+    <h1>后代选择器</h1>
+    <p>后代选择器匹配作为指定元素后代的所有元素。</p>
+    <div>
+        <p>div 中的段落 1。</p>
+        <p>div 中的段落 2。</p>
+        <section><p>div 中的段落 3。</p></section>
+    </div>
+    <p>段落 4。不在 div 中。</p>
+    <p>段落 5。不在 div 中。</p>
+</div>
+
+<div id="num2">
+    <h1>子选择器</h1>
+    <p>子选择器 (>) 选择属于指定元素子元素的所有元素。</p>
+    <div>
+        <p>div 中的段落 1。</p>
+        <p>div 中的段落 2。</p>
+        <section><p>div 中的段落 3。</p></section> <!-- 非子但属后代 -->
+        <p>div 中的段落 4。</p>
+    </div>
+    <p>段落 5。不在 div 中。</p>
+    <p>段落 6。不在 div 中。</p>
+</div>
+
+<div id="num3">
+    <h1>相邻兄弟选择器</h1>
+    <p>相邻的同胞选择器（+）选择所有作为指定元素的相邻的同级元素。</p>
+    <div>
+        <p>div 中的段落 1。</p>
+        <p>div 中的段落 2。</p>
+    </div>
+    <p>段落 3。不在 div 中。</p>
+    <p>段落 4。不在 div 中。</p>
+</div>
+
+<div id="num4">
+    <h1>通用兄弟选择器</h1>
+    <p>通用的兄弟选择器（~）选择指定元素的所有同级元素。</p>
+    <p>段落 1。</p>
+    <div>
+        <p>段落 2。</p>
+    </div>
+    <p>段落 3。</p>
+    <code>一些代码。</code>
+    <p>段落 4。</p>
+</div>
+
+
+</body>
+</html>

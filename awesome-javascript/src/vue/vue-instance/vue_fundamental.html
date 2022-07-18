@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <!-- 也可以使用CLI-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--
+        1. vue优点: 组件化 声明式 虚拟dom
+        1.1 一个简单的vue示例:
+                (1)容器和vue实例是一对一的;
+                (2){{xxx}}中的xxx如果是表达式则直接在界面展示,xxx会自动获取data中的所有属性;
+        注：安装谷歌vue开发者工具;
+     -->
+    <div class="app01">
+<!--        {{}}}插值语法-->
+        <h3>just a test, by {{user01}}</h3>
+        <h3>just a test, by {{user02}}</h3>
+        <h3>{{1+1}},{{Date.now()}}</h3>
+    </div>
+    <div class="app01">
+        <h3>just a test, by {{user01}}</h3>
+        <h3>just a test, by {{user02}}</h3>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const a = new Vue({
+            // el用于指定为哪个容器服务;
+            // el: document.getElementById('app01'),
+            // el: '#app01',
+            el: '.app01',
+            // 这里值暂时先写成对象;
+            data: {
+                user01: 'jason01',
+                user02: 'jason02'
+            }
+        })
+    </script>
+    <hr>
+
+    <!--
+        2. vue模板语法
+        2.1 指令语法用于解析标签(包括:标签属性,标签体内容,绑定事件...),被当成表达式执行;
+    -->
+    <div id="app02">
+        <h2>插值语法</h2>
+        <h3>by {{grammar}}</h3>
+        <br />
+        <h2>指令语法</h2>
+        <a href="http://www.baidu.com">百度一下</a> <br/>
+        <a href="url">百度一下</a>                  <br/>
+        <a v-bind:href="url">test v-bind</a>       <br/>
+        <a :href="url">test v-bind</a>             <br/>
+        <a :href="url.toLocaleUpperCase()">test v-bind</a>             <br/>
+        <a :href="Date.now()">test v-bind</a>             <br/>
+        <a :href="school.url">test second-level --> {{school.url}}</a>
+    </div>
+    <hr>
+    <script>
+        const b = new Vue({
+            el: '#app02',
+            data: {
+                grammar: '插值语法',
+                url:'http://www.taobao.com',
+                school: {
+                    url:'http://localhost:8080'
+                }
+            }
+        })
+    </script>
+    <!--
+        3. 数据绑定
+        3.1 单项数据绑定
+        3.2 双向数据绑定:只能用于表单类(输入类)元素,即有value值的元素,例如:input,select...
+    -->
+    <div id="app03">
+        单项数据绑定:<input type="text" v-bind:value="name"/><br/>
+        双向数据绑定:<input type="text" v-model:value="name"><br/>
+        双向数据绑定(简写):<input type="text" v-model="name"><br/>
+        <!-- 错误写法 -->
+<!--        <h3 v-model:x="name">just a test</h3>-->
+    </div>
+    <hr>
+    <script>
+        const c = new Vue({
+            el: '#app03',
+            data: {
+                name: 'just a test'
+            }
+        })
+    </script>
+    <!--
+        4. el与data的两种写法
+        4.1 el的两种写法:
+            (1)new的时候配置el;
+            (2)使用mount指定el的值;
+        4.2 data的两种写法:
+            (1)对象式;
+            (2)函数式:使用组件时必须使用函数式;
+    -->
+    <div id="app04">
+         <h3>test:{{name}}</h3>
+    </div>
+    <hr>
+    <script>
+        const d = new Vue({
+            // el: '#app04'
+
+            // data: {
+            //     name: 'just a test'
+            // }
+            data:function(){
+                // this是vue的实例对象
+                console.log('@@@',this)
+                return{
+                    name:'just a test by function'
+                }
+            }
+        })
+        console.log(d);
+        // 1s后再绑定;
+        setTimeout(() => {
+                d.$mount('#app04')
+            }, 1000);
+    </script>
+
+    <!--
+        5. MVVM模型:
+        5.1 M(Model):对应data中的数据
+        5.2 V(View):模板
+        5.3 VM(ViewModel):Vue实例对象,DOM Listeners和data binding;
+     -->
+    <div id="app05">
+        <h3>{{name}}</h3>
+        <h3>{{address}}</h3>
+<!--        所有的vue实例属性都能看到-->
+        <h3>vue实例属性: {{$options}}</h3>
+        <h3>vue实例属性: {{$emit}}</h3>
+        <h3>vue实例属性: {{_c}}</h3>
+    </div>
+    <hr>
+    <script>
+        const vm = new Vue({
+            el: '#app05',
+            data: {
+                name: 'jason',
+                address: 'bupt'
+            }
+        })
+        console.log(vm);
+    </script>
+
+    <!--
+        6. 数据代理:将两个对象联系起来(通过一个对象代理对另一个对象中属性的操作),实现数据的现取现用;
+     -->
+    <script type="text/javascript">
+        let number = 19;
+        let person = {
+            // 这里直接写的属性,可以随意删除修改;
+            name: 'jason',
+            address: 'bupt',
+            // age: 18
+            // age: number  // 这么写number值改变,person.age不变;
+        }
+        Object.defineProperty(person, 'age', {
+            // value: 18,
+            // enumerable: true,   // 控制属性能否枚举,默认是false;
+            // writable: true,     // 控制属性能否修改,默认是false;
+            // configurable:true,  // 控制属性能否删除,默认是false;
+
+            // 当有人读取person的age属性时,get函数就会被调用,且返回值就是age的值;
+            get:function(){
+                console.log('读取age的值');
+                return number;
+            },
+            // 当有人修改person的age属性时,set函数就会被调用,且会收到具体的值;
+            set(value) {
+                console.log('修改age的值');
+                number = value;
+            }
+        });
+
+        console.log(Object.keys(person));
+        for (let key in person) {
+            console.log('@', person[key]);
+        }
+        console.log(person);
+    </script>
+    <script>
+        let obj = {x:100};
+        let obj2 = {y:200};
+        // 通过obj2也能操作x;
+        Object.defineProperty(obj2, 'x', {
+            get(){
+                return obj.x
+            },
+            set(value){
+                obj.x = value;
+            }
+        })
+    </script>
+
+    <div id="app06">
+        <h3>姓名: {{name}}</h3>
+        <h3>地址: {{address}}</h3>
+        <h3>姓名: {{_data.name}}</h3>
+        <h3>地址: {{_data.address}}</h3>
+    </div>
+    <hr>
+    <script type="text/javascript">
+        // 验证vm2._date就是data属性中的数据;
+        let data = {
+            name: 'jason',
+            address: 'bupt'
+        }
+        const vm2 = new Vue({
+            el: '#app06',
+            data
+            // data: {
+            //     name: 'jason',
+            //     address: 'bupt'
+            // }
+        })
+    </script>
+    <!--
+        7. 事件处理
+        7.1 事件修饰符:prevent,stop,once,capture,self,passive;
+     -->
+    <style>
+        #app07 {
+            margin-top: 20px;
+            height: 50px;
+            background-color: skyblue;
+        }
+    </style>
+    <div id="app07">
+        <h2>on click事件{{name}}</h2>
+        <button v-on:click="showInfo1">点我提示信息1(不传参)</button><br/>
+        <button v-on:click="showInfo2(33,$event)">点我提示信息2(传参)</button><br/>
+
+<!--        阻止默认事件(常用)-->
+        <a href="http://www.baidu.com" @click.prevent="showInfo3">点击链接,但不要跳转</a>
+<!--        阻止事件冒泡(常用)-->
+        <div class="demo01" @click="showInfo4">
+            <button @click.stop="showInfo4">点击提示信息4</button>
+        </div>
+<!--        事件只触发一次(常用)-->
+        <button @click.once="showInfo5">点击提示信息5</button>
+<!--        使用事件的捕获模式-->
+
+    </div>
+    <script type="text/javascript">
+        function showInfo(){
+            alert('显示提示信息');
+        }
+
+        const f = new Vue({
+            el: '#app07',
+            data: {
+                name:'jason'
+                // 函数写这里也能运行,但不要这么写,function不需要数据代理;
+            },
+            methods: {
+                // showInfo:(event) => {     // 使用 => 后,this指代的就不是此vue实例;
+                showInfo1(event) {
+                    console.log(event.target.innerNext);
+                    console.log(this);
+                    alert('显示提示信息1~~');
+                },
+                showInfo2(number,a) {
+                    // console.log(event.target.innerNext);
+                    console.log(number,a);
+                    alert('显示提示信息2~~');
+                },
+                showInfo3(){
+                    alert('显示提示信息3~~');
+                },
+                showInfo4(){
+                    alert('显示提示信息4~~');
+                },
+                showInfo5(){
+                    alert('显示提示信息5~~');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

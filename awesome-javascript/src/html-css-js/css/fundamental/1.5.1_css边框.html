@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+        CSS border 属性允许您指定元素边框的样式、宽度和颜色。
+        所有 CSS 边框属性
+        属性	        描述
+        border	        简写属性，在一条声明中设置所有边框属性。
+        border-color	简写属性，设置四条边框的颜色。
+        border-radius	简写属性，可设置圆角的所有四个 border-*-radius 属性。
+        border-style	简写属性，设置四条边框的样式。
+        border-width	简写属性，设置四条边框的宽度。
+        border-bottom	简写属性，在一条声明中设置所有下边框属性。
+        border-bottom-color	设置下边框的颜色。
+        border-bottom-style	设置下边框的样式。
+        border-bottom-width	设置下边框的宽度。
+        border-left	        简写属性，在一条声明中设置所有左边框属性。
+        border-left-color	设置左边框的颜色。
+        border-left-style	设置左边框的样式。
+        border-left-width	设置左边框的宽度。
+        border-right	    简写属性，在一条声明中设置所有右边框属性。
+        border-right-color	设置右边框的颜色。
+        border-right-style	设置右边框的样式。
+        border-right-width	设置右边框的宽度。
+        border-top	        简写属性，在一条声明中设置所有上边框属性。
+        border-top-color	设置上边框的颜色。
+        border-top-style	设置上边框的样式。
+        border-top-width	设置上边框的宽度。
+    */
+
+</style>
+
+<style>
+    /* 指定边框基本属性 */
+    p.dotted {border-style: dotted;}
+    p.dashed {border-style: dashed;}
+    p.solid {border-style: solid;}
+    p.double {border-style: double;}
+    p.groove {border-style: groove;}
+    p.ridge {border-style: ridge;}
+    p.inset {border-style: inset;}
+    p.outset {border-style: outset;}
+    p.none {border-style: none;}
+    p.hidden {border-style: hidden;}
+    p.mix {border-style: dotted dashed solid double;}
+</style>
+<style>
+    /* 指定边框宽度 */
+    p.one {
+        border-style: solid;
+        border-width: 5px;
+    }
+
+    p.two {
+        border-style: solid;
+        border-width: medium;
+    }
+
+    p.three {
+        border-style: dotted;
+        border-width: 2px;
+    }
+
+    p.four {
+        border-style: dotted;
+        border-width: thick;
+    }
+
+    p.five {
+        border-style: double;
+        border-width: 15px;
+    }
+
+    p.six {
+        border-style: double;
+        border-width: thick;
+    }
+</style>
+<style>
+    /* 指定边框特定边的颜色 */
+    p.one {
+        border-style: solid;
+        border-color: red green blue yellow; /* 上红、右绿、下蓝、左黄 */
+    }
+</style>
+<style>
+    /* 指定边框特定边的属性 */
+    p.seven {
+        border-top-style: dotted;
+        border-right-style: solid;
+        border-bottom-style: dotted;
+        border-left-style: solid;
+    }
+    p.eight {
+        border-style: dotted solid double dashed;
+        /*border-style: dotted solid double;*/
+        /*border-style: dotted solid;*/
+        /*border-style: dotted;*/
+    }
+    p.eleven {
+        border-bottom: 6px solid red;
+        background-color: lightgrey;
+    }
+</style>
+<style>
+    /* 简写边框属性 */
+    p.nine {
+        border: 5px solid red;
+    }
+    p.ten {
+        border-left: 6px solid red;
+        background-color: lightgrey;
+    }
+</style>
+<style>
+    /* css圆角边框 */
+    p.normal {
+        border: 2px solid red;
+    }
+    p.round1 {
+        border: 2px solid red;
+        border-radius: 5px;
+    }
+    p.round2 {
+        border: 2px solid red;
+        border-radius: 8px;
+    }
+    p.round3 {
+        border: 2px solid red;
+        border-radius: 12px;
+    }
+</style>
+<body>
+<h1>border-style 属性</h1>
+<p>此属性规定要显示的边框类型：</p>
+<p class="dotted">点状边框。</p>
+<p class="dashed">虚线边框。</p>
+<p class="solid">实线边框。</p>
+<p class="double">双线边框。</p>
+<p class="groove">凹槽边框。</p>
+<p class="ridge">垄状边框。</p>
+<p class="inset">3D inset 边框。</p>
+<p class="outset">3D outset 边框。</p>
+<p class="none">无边框。</p>
+<p class="hidden">隐藏边框。</p>
+<p class="mix">混合边框。</p>
+
+
+<h1>border-width 属性</h1>
+<p>此属性规定四条边框的宽度：</p>
+<p class="one">一些文本。</p>
+<p class="two">一些文本。</p>
+<p class="three">一些文本。</p>
+<p class="four">一些文本。</p>
+<p class="five">一些文本。</p>
+<p class="six">一些文本。</p>
+<p><b>注释：</b>border-color 属性单独使用时不起作用。请首先使用 border-style 属性设置样式。</p>
+
+<h1>border-style 特定边属性</h1>
+<p>此属性规定四条边框的宽度：</p>
+<p class="seven">一些文本。</p>
+<p class="eight">一些文本。</p>
+
+<h1>border 属性</h1>
+<p class="nine">此属性是 border-width、border-style 以及 border-color 的简写属性。</p>
+<h1>border-left 属性</h1>
+<p class="ten">此属性是 border-left-width、border-left-style 以及 border-left-color 的简写属性。</p>
+<h1>border-bottom 属性</h1>
+<p class="eleven">此属性是 border-bottom-width、border-bottom-style 以及 border-bottom-color 的简写属性。</p>
+<h1>border-radius 属性</h1>
+
+<p>此属性用于为元素添加圆角：</p>
+<p class="normal">普通边框</p>
+<p class="round1">圆角边框</p>
+<p class="round2">角更圆的边框</p>
+<p class="round3">角最圆的边框</p>
+
+</body>
+</html>

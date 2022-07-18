@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            HTML 列表和 CSS 列表属性
+                在 HTML 中，列表主要有两种类型：
+                无序列表（<ul>）- 列表项用的是项目符号标记
+                有序列表（<ol>）- 列表项用的是数字或字母标记
+
+                CSS 列表属性：
+                为有序列表设置不同的列表项标记
+                为无序列表设置不同的列表项标记
+                将图像设置为列表项标记
+                为列表和列表项添加背景色
+        */
+    </style>
+    <style>
+        /*
+            图像作为列表项标记:list-style-image 属性将图像指定为列表项标记
+         */
+        ul.a {
+            list-style-type: circle;
+        }
+        ul.b {
+            list-style-type: square;
+        }
+        ol.c {
+            list-style-type: upper-roman;
+        }
+        ol.d {
+            list-style-type: lower-alpha;
+        }
+    </style>
+    <style>
+        ul.t1 {
+            list-style-image: url('../../../assets/logo.png');
+        }
+        /*列表简写*/
+        /*ul.t1 {*/
+        /*    list-style: square inside url("sqpurple.gif");*/
+        /*}*/
+    </style>
+    <style>
+        /*
+        定位列表项标记:
+            list-style-position 属性指定列表项标记（项目符号）的位置。
+            "list-style-position: outside;" 表示项目符号点将在列表项之外。列表项每行的开头将垂直对齐。
+            "list-style-position: inside;" 表示项目符号将在列表项内。由于它是列表项的一部分，因此它将成为文本的一部分，并在开头推开文本
+        */
+        ul.t2 {
+            list-style-position: outside;
+        }
+        ul.t2 {
+            list-style-position: inside;
+        }
+    </style>
+    <style>
+        /* 删除默认配置 */
+        ul {
+            /*list-style-type: none;*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+        }
+    </style>
+    <style>
+        ol.t3 {
+            background: #ff9999;
+            padding: 20px;
+        }
+        ul.t3 {
+            background: #3399ff;
+            padding: 20px;
+        }
+        ol.t3 li.t3 {
+            background: #ffe5e5;
+            padding: 5px;
+            margin-left: 35px;
+        }
+        ul.t3 li.t3 {
+            background: #cce5ff;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>列表</h1>
+<p>无序列表实例：</p>
+<ul class="a">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+<ul class="b">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+<p>有序列表实例：</p>
+<ol class="c">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ol>
+<ol class="d">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ol>
+
+<h1>CSS 列表</h1>
+<p>list-style-image 属性规定图像作为列表项标记：</p>
+<ul class="t1">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Coca Cola</li>
+</ul>
+
+<h1>list-style-position 属性</h1>
+<h2>list-style-position: outside（默认）：</h2>
+<ul class="t2">
+    <li>咖啡-用烘焙过的咖啡豆制成的冲泡饮料，烘焙过的咖啡豆是来自咖啡植物的浆果的种子</li>
+    <li>茶-一种芳香饮料，通常通过将热水或沸水倒在茶树的固化叶子上而制得，茶树是一种原产于亚洲的常绿灌木（灌木）</li>
+    <li>可口可乐-由可口可乐公司生产的碳酸软饮料。该饮料的名称指的是其两种原始成分，即可乐果（一种咖啡因）和古柯叶。</li>
+</ul>
+<h2>list-style-position: inside：</h2>
+<ul class="t2">
+    <li>咖啡-用烘焙过的咖啡豆制成的冲泡饮料，烘焙过的咖啡豆是来自咖啡植物的浆果的种子</li>
+    <li>茶-一种芳香饮料，通常通过将热水或沸水倒在茶树的固化叶子上而制得，茶树是一种原产于亚洲的常绿灌木（灌木）</li>
+    <li>可口可乐-由可口可乐公司生产的碳酸软饮料。该饮料的名称指的是其两种原始成分，即可乐果（一种咖啡因）和古柯叶。</li>
+</ul>
+
+<h1>设置列表的颜色样式：</h1>
+<ol class="t3">
+    <li class="t3">Coffee</li>
+    <li class="t3">Tea</li>
+    <li class="t3">Coca Cola</li>
+</ol>
+<ul class="t3">
+    <li class="t3">Coffee</li>
+    <li class="t3">Tea</li>
+    <li class="t3">Coca Cola</li>
+</ul>
+</body>
+</html>

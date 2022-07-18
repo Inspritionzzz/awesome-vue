@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            所有 CSS 字体属性
+            属性	描述
+            font	简写属性。在一条声明中设置所有字体属性。
+            font-family	规定文本的字体系列（字体族）。
+            font-size	规定文本的字体大小。
+            font-style	规定文本的字体样式。
+            font-variant	规定是否以小型大写字母的字体显示文本。
+            font-weight	规定字体的粗细。
+         */
+    </style>
+    <style>
+        body {
+            background-color: #ffffff;
+            /*color: blue;*/
+        }
+        div.t1 {
+            border: 1px solid gray;
+            padding: 8px;
+        }
+        h1.t2 {
+            text-align: center;
+            text-transform: uppercase;
+            color: #4CAF50;
+        }
+        p.t3 {
+            text-indent: 50px;
+            text-align: justify;
+            letter-spacing: 3px;
+        }
+        a.t4 {
+            text-decoration: none;
+            color: #008CBA;
+        }
+    </style>
+    <style>
+        /* css文本对齐 */
+        h1.t5 {
+            text-align: center;
+        }
+        h2.t6 {
+            text-align: left;
+        }
+        h3.t7 {
+            text-align: right;
+        }
+    </style>
+    <style>
+        /* 当 text-align 属性设置为 "justify" 后，将拉伸每一行，以使每一行具有相等的宽度 */
+        div.t8 {
+            border: 1px solid black;
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            text-align: justify;
+        }
+    </style>
+    <style>
+        /* direction 和 unicode-bidi 属性可用于更改元素的文本方向 */
+        p.ex1 {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
+    </style>
+    <style>
+        /* vertical-align 属性设置元素的垂直对齐方式 */
+        img.top {
+            vertical-align: top;
+        }
+        img.middle {
+            vertical-align: middle;
+        }
+        img.bottom {
+            vertical-align: bottom;
+        }
+    </style>
+    <style>
+        /*
+            文字装饰:
+                text-decoration 属性用于设置或删除文本装饰
+                text-decoration: none; 通常用于从链接上删除下划线
+         */
+        a.t9 {
+            text-decoration: none;
+        }
+        h1.t10 {
+            text-decoration: overline;
+        }
+        h2.t11 {
+            text-decoration: line-through;
+        }
+        h3.t12 {
+            text-decoration: underline;
+        }
+    </style>
+    <style>
+        /* 文本转换 */
+        p.uppercase {
+            text-transform: uppercase;
+        }
+        p.lowercase {
+            text-transform: lowercase;
+        }
+        p.capitalize {
+            text-transform: capitalize;
+        }
+
+    </style>
+    <style>
+        /* css文本间距 */
+
+        /* 文字缩进 */
+        p.t13 {
+            text-indent: 50px;
+        }
+
+        /* 字母间距 */
+        h1.t14 {
+            letter-spacing: 3px;
+        }
+        h2.t15 {
+            letter-spacing: -3px;
+        }
+
+        /* 行高 */
+        p.small {
+            line-height: 0.7;
+        }
+        p.big {
+            line-height: 1.8;
+        }
+
+        /* 字间距 */
+        h1.t16 {
+            word-spacing: 10px;
+        }
+        h2.t17 {
+            word-spacing: -5px;
+        }
+
+        /* 空白 */
+        p.t18 {
+            white-space: nowrap;
+        }
+    </style>
+    <style>
+        /* 文本阴影 */
+        h1.t19 {
+            text-shadow: 2px 2px;
+        }
+        h1.t20 {
+            text-shadow: 2px 2px red;
+        }
+        h1.t21 {
+            text-shadow: 2px 2px 5px red;
+        }
+    </style>
+    <style>
+        /*
+        在 CSS 中，有五个通用字体族：
+            衬线字体（Serif）- 在每个字母的边缘都有一个小的笔触。它们营造出一种形式感和优雅感。
+            无衬线字体（Sans-serif）- 字体线条简洁（没有小笔画）。它们营造出现代而简约的外观。
+            等宽字体（Monospace）- 这里所有字母都有相同的固定宽度。它们创造出机械式的外观。
+            草书字体（Cursive）- 模仿了人类的笔迹。
+            幻想字体（Fantasy）- 是装饰性/俏皮的字体。
+        所有不同的字体名称都属于这五个通用字体系列之一。
+        */
+        .p1 {
+            font-family: "Times New Roman", Times, serif;
+        }
+        .p2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .p3 {
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+    </style>
+    <style>
+        /* 字体样式 */
+        p.normal {
+            font-style: normal;
+        }
+        p.italic {
+            font-style: italic;
+        }
+        p.oblique {
+            font-style: oblique;
+        }
+        /* 字体粗细 */
+        p.normal2 {
+            font-weight: normal;
+        }
+        p.light2 {
+            font-weight: lighter;
+        }
+        p.thick2 {
+            font-weight: bold;
+        }
+        p.thicker2 {
+            font-weight: 900;
+        }
+
+        /* 字体变体 */
+        p.normal {
+            font-variant: normal;
+        }
+        p.small {
+            font-variant: small-caps;
+        }
+    </style>
+    <style>
+        /*
+            字体大小：
+                font-size 属性设置文本的大小。
+                请始终使用正确的 HTML 标签，例如 <h1> - <h6> 用于标题，而 <p> 仅用于段落。
+                font-size 值可以是绝对或相对大小。
+
+            绝对尺寸：
+            将文本设置为指定大小
+            不允许用户在所有浏览器中更改文本大小（可访问性不佳）
+            当输出的物理尺寸已知时，绝对尺寸很有用
+
+            相对尺寸：
+            设置相对于周围元素的大小
+            允许用户在浏览器中更改文本大小
+            注释：如果您没有指定字体大小，则普通文本（如段落）的默认大小为 16px（16px = 1em）。
+        */
+        body {
+            font-size: 100%;
+        }
+        h1.t22 {
+            font-size: 40px;
+            /*font-size: 2.5em; !* 40px/16=2.5em *!*/
+        }
+        h2.t23 {
+            font-size: 30px;
+            /*font-size: 1.875em; !* 30px/16=1.875em *!*/
+        }
+        p.t24 {
+            font-size: 14px;
+            /*font-size: 0.875em; !* 14px/16=0.875em *!*/
+        }
+        /*
+            响应式字体：
+                响应式字体大小可以使用 vw 单位设置文本大小，它的意思是“视口宽度”（"viewport width"）。
+                这样，文本大小将遵循浏览器窗口的大小，请调整浏览器窗口的大小，以查看字体大小如何缩放
+        */
+    </style>
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+        /* 谷歌字体 */
+        body {
+            /*font-family: "Sofia";*/
+            /*font-size: 22px;*/
+        }
+    </style>
+    <style>
+        /* css字体属性 */
+        p.a {
+            font: 20px Arial, sans-serif;
+        }
+        p.b {
+            font: italic bold 12px/30px Georgia, serif;
+        }
+    </style>
+</head>
+<body>
+<div class="t1">
+    <h1 class="t2">text formatting</h1>
+    <p class="t3">This text is styled with some of the text formatting properties. The heading uses the text-align, text-transform, and color properties.
+        The paragraph is indented, aligned, and the space between characters is specified. The underline is removed from this colored
+        <a class="t4" target="_blank" href="tryit.asp?filename=trycss_text">"Try it Yourself"</a> link.</p>
+</div>
+
+<h1 class="t5">标题 1（居中对齐）</h1>
+<h2 class="t6">标题 2（左对齐）</h2>
+<h3 class="t7">标题 3（右对齐）</h3>
+<p>上面的三个标题是居中、左和右对齐。</p>
+
+<h1>text-align: justify; 实例</h1>
+<p>text-align: justify; 值会拉伸线条，使每条线都有相等的宽度（比如报纸和杂志）。</p>
+<div class="t8">
+    In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. 'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'
+</div>
+
+<br />
+<br />
+<br />
+<p>This is the default text direction.</p>
+<p class="ex1">This is right-to-left text direction.</p>
+<p>一幅 <img src="../../../assets/logo.png" alt="W3School" width="180" height="167"> 默认对齐方式的图像。</p><br>
+<p>一幅 <img class="top" src="../../../assets/logo.png" alt="W3School" width="180" height="167"> 上对齐的图像。</p><br>
+<p>一幅 <img class="middle" src="../../../assets/logo.png" alt="W3School" width="180" height="167"> 居中对齐的图像。</p><br>
+<p>一幅 <img class="bottom" src="../../../assets/logo.png" alt="W3School" width="180" height="167"> 下对齐的图像。</p>
+
+<p>没有下划线的链接：<a class="t9" href="https://www.w3school.com.cn">W3School.com.cn</a></p>
+
+<h1 class="t10">This is heading 1</h1>
+<h2 class="t11">This is heading 2</h2>
+<h3 class="t12">This is heading 3</h3>
+
+<p class="uppercase">This is some text.</p>
+<p class="lowercase">This is some text.</p>
+<p class="capitalize">This is some text.</p>
+
+<p class="t13">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+    'Whenever you feel like criticizing anyone,' he told me, 'just remember that all the people in this world haven't had the advantages that you've had.'</p>
+
+<h1 class="t14">This is heading 1</h1>
+<h2 class="t15">This is heading 2</h2>
+
+<p>
+    这是有标准行高的段落<br>
+    大多数浏览器中的默认行高大概是 110% 到 120%。<br>
+</p>
+<p class="small">
+    这是行高更小的段落。<br>
+    这是行高更小的段落。<br>
+</p>
+<p class="big">
+    这是行高更大的段落。<br>
+    这是行高更大的段落。<br>
+</p>
+
+<h1 class="t16">This is heading 1</h1>
+<h2 class="t17">This is heading 2</h2>
+
+<h2>空白</h2>
+<p class="t18">
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+    This is some text. This is some text. This is some text.
+</p>
+<p>请尝试删除 white-space 属性来看一下区别。</p>
+
+<h1 class="t19">文本阴影效果！</h1>
+<h1 class="t20">文本阴影效果！</h1>
+<h1 class="t21">文本阴影效果！</h1>
+
+<h1>CSS font-family</h1>
+
+<p>这是一个段落，以 Times New Roman 字体显示：</p>
+<p class="p1">This is a paragraph, shown in the Times New Roman font.</p>
+<p>这是一个段落，以 Arial 字体显示：</p>
+<p class="p2">This is a paragraph, shown in the Arial font.</p>
+<p>这是一个段落，以 Lucida Console 字体显示：</p>
+<p class="p3">This is a paragraph, shown in the Lucida Console font.</p>
+
+<p class="normal">This is a paragraph in normal style.</p>
+<p class="italic">This is a paragraph in italic style.</p>
+<p class="oblique">This is a paragraph in oblique style.</p>
+
+<p class="normal2">This is a paragraph.</p>
+<p class="light2">This is a paragraph.</p>
+<p class="thick2">This is a paragraph.</p>
+<p class="thicker2">This is a paragraph.</p>
+
+<p class="normal3">My name is Bill Gates.</p>
+<p class="small3">My name is Bill Gates.</p>
+
+<h1 class="t22">这是标题 1</h1>
+<h2 class="t23">这是标题 2</h2>
+<p class="t24">这是一个段落。</p>
+<p class="t24">这是另一个段落。</p>
+
+<!--<h1 style="font-size:10vw;">响应式文本</h1>-->
+<!--<p style="font-size:5vw;">请调整浏览器窗口的大小，以查看文本大小如何缩放。</p>-->
+<!--<p style="font-size:5vw;">调整文本大小时，请使用 "vw" 单位。 10vw 将尺寸设置为视口宽度的 10％。</p>-->
+<!--<p>视口是浏览器窗口的大小。 1vw = 视口宽度的 1％。如果视口为 50 厘米宽，则 1vw 为 0.5 厘米。</p>-->
+
+<h1 class="t25">Sofia Font</h1>
+<p class="t25">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+<h1>The font Property</h1>
+<p class="a">This is a paragraph. The font size is set to 20 pixels, and the font family is Arial.</p>
+<p class="b">This is a paragraph. The font is set to italic and bold, the font size is set to 12 pixels, the line height is set to 30 pixels, and the font family is Georgia.</p>
+</body>
+</html>

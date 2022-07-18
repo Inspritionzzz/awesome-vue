@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="content-type"content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="resources/themes/default/easyui.css" type="text/css">
+    <link rel="stylesheet" href="resources/themes/icon.css" type="text/css">
+    <link rel="stylesheet" href="resources/themes/color.css" type="text/css">
+    <link rel="stylesheet" href="resources/themes/metro-blue/easyui.css" type="text/css">
+<!--    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">-->
+    <script type="text/javascript" src="resources/jquery.min.js"></script>
+    <script type="text/javascript" src="resources/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="resources/locale/easyui-lang-zh_CN.js"></script>
+
+</head>
+<body>
+<!--<div id="dd" class="easyui-dialog" title="My Dialog" style="width:550px;height:250px">Dialog</div>-->
+<hr>
+<div id="p" class="easyui-panel" style="width:500px;height:200px;padding:10px;"
+     title="My Panel" iconCls="icon-save" collapsible="true">
+    The panel content
+</div>
+<hr>
+<div id="cc" class="easyui-layout" style="width:600px;height:400px;">
+    <div data-options="region:'north',title:'North Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>
+    <div data-options="region:'east',title:'East',split:true" style="width:100px;"></div>
+    <div data-options="region:'west',title:'West',split:true" style="width:100px;"></div>
+    <div data-options="region:'center',title:'center title'" style="padding:5px;background:#eee;"></div>
+</div>
+<table class="easyui-datagrid">
+    <thead>
+    <tr>
+        <th data-options="field:'code'">Code</th>
+        <th data-options="field:'name'">Name</th>
+        <th data-options="field:'price'">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>001</td><td>name1</td><td>2323</td>
+    </tr>
+    <tr>
+        <td>002</td><td>name2</td><td>4612</td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<input class="easyui-slider" value="12" style="width:300px"
+       data-options="showTip:true,rule:[0,'|',25,'|',50,'|',75,'|',100]">
+<hr>
+<div id="toolbar">
+    <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="javascript:$('#dg01').edatagrid('addRow')">New</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="javascript:$('#dg01').edatagrid('destroyRow')">Destroy</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" onclick="javascript:$('#dg01').edatagrid('saveRow')">Save</a>
+    <a href="#" class="easyui-linkbutton" iconCls="icon-undo" plain="true" onclick="javascript:$('#dg01').edatagrid('cancelRow')">Cancel</a>
+</div>
+<hr>
+<script>
+    $('#dg01').edatagrid({
+    url: 'get_users.php',
+    saveUrl: 'save_user.php',
+    updateUrl: 'update_user.php',
+    destroyUrl: 'destroy_user.php'
+    });
+</script>
+
+<table id="dg"></table>
+<div id="dd">Dialog Content.</div>
+<script>
+    $('#dg').datagrid({
+        // url:'datagrid_data.json',
+        singleSelect: false,//只能单选一行记录
+        rownumbers: true,//显示行号
+        striped: true,//条纹,斑马线
+        checkOnSelect: true,
+        frozenColumns: [
+                            [   // 冻结列,在columns就不要写这一列了,会影响加载性能;
+                                {field : 'ck',checkbox : true}
+                            ],
+                            [
+                                {field : 'ck',checkbox : true}
+                            ]
+                        ],
+        columns:[
+                    [
+                        {field:'code',title:'Code',width:100,align:'left',sortable:true}, // file指model中的属性;
+                        {field:'name',title:'Name',width:100,align:'left',sortable:true},
+                        {field:'price',title:'Price',width:100,align:'left',sortable:true},
+                        {field:'code',title:'Code',width:100,align:'left',sortable:true},
+                        {field:'name',title:'Name',width:100,align:'left',sortable:true},
+                        {field:'price',title:'Price',width:100,align:'left',sortable:true},
+                    ],
+                    [
+                        {field:'code',title:'123',width:100,align:'left'},
+                        {field:'name',title:'jason',width:100,align:'left'},
+                        {field:'price',title:'100',width:100,align:'left'},
+                        {field:'code',title:'1234',width:100,align:'left'},
+                        {field:'name',title:'jason2',width:100,align:'left'},
+                        {field:'price',title:'101',width:100,align:'left'}
+                    ]
+                ],
+        toolbar : [
+                    {
+                        text : "全部导出",
+                        iconCls : "icon-export",
+                        handler : function() {
+                            // alert('导出...');
+                            getDetails();
+                        }
+                    },
+                    {
+                        text : "人工关联任务",
+                        iconCls : "icon-edit",
+                        handler : function() {
+                            alert('关联任务...');
+                        }
+                    },
+                    {
+                        text : "<b style='color:red;'>双击选中进入可疑交易报告详细信息页面</b>"
+                    }
+                ],
+        onDblClickCell: function(rowIndex, rowData) {
+            $(this).datagrid('beginEdit', index);
+            var ed = $(this).datagrid('getEditor', {index:index,field:field});
+            $(ed.target).focus();
+            alert('已双击选中...' + rowIndex);
+        },
+        data: [
+
+        ]
+    });
+    $('#dg').datagrid('insertRow', {
+        index: 1,
+        row: {
+            code: 233,
+            Name: 'new name',
+            Price: 'some messages',
+            Code: 234,
+            Name: 'new name',
+            Price: 'some messages'
+        }
+    });
+    function getDetails() {
+        $('#dd').dialog({
+            title : '文件详情',
+            width : 700,
+            height : 300,
+            closed : false,
+            cache : false,
+            href : 'index.html',
+            modal : true
+        });
+        $('#dd').dialog('refresh', 'index.html');
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            5.CSS 背景属性用于定义元素的背景效果:
+                background-color
+                background-image
+                background-repeat
+                background-attachment
+                background-position
+        */
+    </style>
+</head>
+<body>
+<!-- 指定背景body的背景色 -->
+<style>
+    body {
+        background-color: lightblue;
+    }
+</style>
+<h1>Hello World!</h1>
+<p>此页面拥有浅蓝色背景色！</p>
+
+<!-- 为<h1> <p> <div>设置不同的背景色 -->
+<style>
+    h1 {
+        background-color: green;
+    }
+    #num1
+    div {
+        background-color: lightblue;
+    }
+    p {
+        background-color: yellow;
+    }
+</style>
+<h1>CSS background-color 实例</h1>
+<div id="num1">
+    这是 div 元素内的文本。
+    <p>本段有其自己的背景色。</p>
+    我们仍然在 div 元素中。
+</div>
+
+<!--
+    opacity 属性指定元素的不透明度/透明度。取值范围为 0.0 - 1.0。值越低，越透明;
+    注意：使用 opacity 属性为元素的背景添加透明度时，其所有子元素都继承相同的透明度。这可能会使完全透明的元素内的文本难以阅读
+ -->
+<style>
+    div {
+        background-color: green;
+    }
+    div.first {
+        opacity: 0.1;
+    }
+    div.second {
+        opacity: 0.3;
+    }
+    div.third {
+        opacity: 0.6;
+    }
+</style>
+<h1>透明框</h1>
+<p>当使用 opacity 属性为元素背景添加透明度时，其所有子元素也会变为透明。这可能会使完全透明的元素内的文本难以阅读：</p>
+<div class="first">
+    <h1>opacity 0.1</h1>
+</div>
+<div class="second">
+    <h1>opacity 0.3</h1>
+</div>
+<div class="third">
+    <h1>opacity 0.6</h1>
+</div>
+<div>
+    <h1>opacity 1（默认）</h1>
+</div>
+
+<!--
+    使用 RGBA 指定颜色的透明度；
+ -->
+
+<style>
+    div {
+        background: rgb(0, 128, 0);
+    }
+    div.first {
+        background: rgba(0, 128, 0, 0.1);
+    }
+    div.second {
+        background: rgba(0, 128, 0, 0.3);
+    }
+    div.third {
+        background: rgba(0, 128, 0, 0.6);
+    }
+</style>
+<h1>透明框</h1>
+
+<p>使用 opacity：</p>
+
+<div style="opacity:0.1;">
+    <h1>10% opacity</h1>
+</div>
+
+<div style="opacity:0.3;">
+    <h1>30% opacity</h1>
+</div>
+
+<div style="opacity:0.6;">
+    <h1>60% opacity</h1>
+</div>
+
+<div>
+    <h1>opacity 1</h1>
+</div>
+<p>使用 RGBA 颜色值：</p>
+<div class="first">
+    <h1>10% opacity</h1>
+</div>
+<div class="second">
+    <h1>30% opacity</h1>
+</div>
+<div class="third">
+    <h1>60% opacity</h1>
+</div>
+<div>
+    <h1>默认</h1>
+</div>
+<p>注意使用 opacity 属性时文本以及背景颜色如何变得透明。</p>
+
+
+</body>
+</html>

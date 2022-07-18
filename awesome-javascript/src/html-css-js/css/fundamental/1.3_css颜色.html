@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            4.指定颜色是通过使用预定义的颜色名称，或 RGB、HEX、HSL、RGBA、HSLA 值
+                4.1 RGB 值:
+                    在 CSS 中，可以使用下面的公式将颜色指定为 RGB 值：rgb(red, green, blue),每个参数 (red、green 以及 blue)
+                    定义了 0 到 255 之间的颜色强度。例如，rgb(255, 0, 0) 显示为红色，因为红色设置为最大值（255），其他设置为 0。
+                    要显示黑色，请将所有颜色参数设置为 0，如下所示：rgb(0, 0, 0)。
+                    要显示白色，请将所有颜色参数设置为 255，如下所示：rgb(255, 255, 255)
+                4.2 RGBA 值：
+                    RGBA 颜色值是具有 alpha 通道的 RGB 颜色值的扩展 - 它指定了颜色的不透明度。
+                    RGBA 颜色值指定为：rgba(red, green, blue, alpha)，alpha 参数是介于 0.0（完全透明）和 1.0（完全不透明）之间的数字。
+                4.3 HEX 值：
+                    在 CSS 中，可以使用以下格式的十六进制值指定颜色：
+                    #rrggbb，其中 rr（红色）、gg（绿色）和 bb（蓝色）是介于 00 和 ff 之间的十六进制值（与十进制 0-255 相同）。
+                    例如，#ff0000 显示为红色，因为红色设置为最大值（ff），其他设置为最小值（00）。
+                4.4 HSL 值：
+                    在 CSS 中，可以使用色相、饱和度和明度（HSL）来指定颜色，格式如下：
+                    hsla(hue, saturation, lightness)：
+                        色相（hue）是色轮上从 0 到 360 的度数。0 是红色，120 是绿色，240 是蓝色。
+                        饱和度（saturation）是一个百分比值，0％ 表示灰色阴影，而 100％ 是全色。
+                        亮度（lightness）也是百分比，0％ 是黑色，50％ 是既不明也不暗，100％是白色。
+                4.5 HSLA 值：
+                    带有 Alpha 通道的 HSL 颜色值的扩展 - 它指定了颜色的不透明度。
+                    HSLA 颜色值指定为：hsla(hue, saturation, lightness, alpha)
+                        alpha 参数是介于 0.0（完全透明）和 1.0（完全不透明）之间的数字
+                注：调色盘：https://www.w3school.com.cn/css/css_colors_rgb.asp
+        */
+    </style>
+</head>
+<body>
+<!-- 设置背景色 -->
+<h1 style="background-color:Tomato;">番茄色</h1>
+<h1 style="background-color:Orange;">橙色</h1>
+<h1 style="background-color:DodgerBlue;">道奇蓝</h1>
+<h1 style="background-color:MediumSeaGreen;">中海绿色</h1>
+<h1 style="background-color:Gray;">灰色</h1>
+<h1 style="background-color:SlateBlue;">板岩蓝</h1>
+<h1 style="background-color:Violet;">紫色</h1>
+<h1 style="background-color:LightGray;">浅灰</h1>
+<h1 style="background-color:DodgerBlue;">China</h1>
+<p style="background-color:Tomato;">China is a great country!</p>
+
+<!-- css文本颜色 -->
+<h1 style="color:Tomato;">China</h1>
+<p style="color:DodgerBlue;">China is a great country!</p>
+<p style="color:MediumSeaGreen;">China, officially the People's Republic of China...</p>
+
+<!-- css边框颜色 -->
+<h1 style="border:2px solid Tomato;">Hello World</h1>
+<h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+<h1 style="border:2px solid Violet;">Hello World</h1>
+
+<!-- 使用 RGB 值、HEX 值、HSL 值、RGBA 值或者 HSLA 值来指定颜色 -->
+<h1 style="background-color:rgb(255, 99, 71);">...</h1>
+<h1 style="background-color:#ff6347;">...</h1>
+<h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+
+<!-- 使用RGB的值 -->
+<p>在 HTML 中，您可使用 RGB 值规定颜色。</p>
+<h1 style="background-color:rgb(255, 0, 0);">rgb(255, 0, 0)</h1>
+<h1 style="background-color:rgb(0, 0, 255);">rgb(0, 0, 255)</h1>
+<h1 style="background-color:rgb(60, 179, 113);">rgb(60, 179, 113)</h1>
+<h1 style="background-color:rgb(238, 130, 238);">rgb(238, 130, 238)</h1>
+<h1 style="background-color:rgb(255, 165, 0);">rgb(255, 165, 0)</h1>
+<h1 style="background-color:rgb(106, 90, 205);">rgb(106, 90, 205)</h1>
+
+<p>通过使用相等的红绿蓝色值，您会得到不同的灰阶。</p>
+<h1 style="background-color:rgb(0, 0, 0);">rgb(0, 0, 0)</h1>
+<h1 style="background-color:rgb(60, 60, 60);">rgb(60, 60, 60)</h1>
+<h1 style="background-color:rgb(120, 120, 120);">rgb(120, 120, 120)</h1>
+<h1 style="background-color:rgb(180, 180, 180);">rgb(180, 180, 180)</h1>
+<h1 style="background-color:rgb(240, 240, 240);">rgb(240, 240, 240)</h1>
+<h1 style="background-color:rgb(255, 255, 255);">rgb(255, 255, 255)</h1>
+
+<p>您可通过使用 RGBA 颜色值来生成透明色。</p>
+<h1 style="background-color:rgba(255, 99, 71, 0);">rgba(255, 99, 71, 0)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.2);">rgba(255, 99, 71, 0.2)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.4);">rgba(255, 99, 71, 0.4)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.6);">rgba(255, 99, 71, 0.6)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 0.8);">rgba(255, 99, 71, 0.8)</h1>
+<h1 style="background-color:rgba(255, 99, 71, 1);">rgba(255, 99, 71, 1)</h1>
+
+<p>在 HTML 中，您可以使用十六进制值规定颜色。</p>
+<h1 style="background-color:#ff0000;">#ff0000</h1>
+<h1 style="background-color:#0000ff;">#0000ff</h1>
+<h1 style="background-color:#3cb371;">#3cb371</h1>
+<h1 style="background-color:#ee82ee;">#ee82ee</h1>
+<h1 style="background-color:#ffa500;">#ffa500</h1>
+<h1 style="background-color:#6a5acd;">#6a5acd</h1>
+
+<p>通过对红色，绿色和蓝色使用相等的值，您将获得不同的灰阶。</p>
+<h1 style="background-color:#000000;">#000000</h1>
+<h1 style="background-color:#3c3c3c;">#3c3c3c</h1>
+<h1 style="background-color:#787878;">#787878</h1>
+<h1 style="background-color:#b4b4b4;">#b4b4b4</h1>
+<h1 style="background-color:#f0f0f0;">#f0f0f0</h1>
+<h1 style="background-color:#ffffff;">#ffffff</h1>
+
+<p>在 HTML 中，您可以使用 HSL 值来设置颜色。</p>
+<h1 style="background-color:hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</h1>
+<h1 style="background-color:hsl(240, 100%, 50%);">hsl(240, 100%, 50%)</h1>
+<h1 style="background-color:hsl(147, 50%, 47%);">hsl(147, 50%, 47%)</h1>
+<h1 style="background-color:hsl(300, 76%, 72%);">hsl(300, 76%, 72%)</h1>
+<h1 style="background-color:hsl(39, 100%, 50%);">hsl(39, 100%, 50%)</h1>
+<h1 style="background-color:hsl(248, 53%, 58%);">hsl(248, 53%, 58%)</h1>
+
+<p>通过 HSL 颜色，设置更少的饱和度意味着更少的颜色，0% 为全灰。</p>
+<h1 style="background-color:hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</h1>
+<h1 style="background-color:hsl(0, 80%, 50%);">hsl(0, 80%, 50%)</h1>
+<h1 style="background-color:hsl(0, 60%, 50%);">hsl(0, 60%, 50%)</h1>
+<h1 style="background-color:hsl(0, 40%, 50%);">hsl(0, 40%, 50%)</h1>
+<h1 style="background-color:hsl(0, 20%, 50%);">hsl(0, 20%, 50%)</h1>
+<h1 style="background-color:hsl(0, 0%, 50%);">hsl(0, 0%, 50%)</h1>
+
+<p>通过 HSL 颜色，亮度 0% 显示黑色，亮度 100 显示白色。</p>
+<h1 style="background-color:hsl(0, 100%, 0%);">hsl(0, 100%, 0%)</h1>
+<h1 style="background-color:hsl(0, 100%, 25%);">hsl(0, 100%, 25%)</h1>
+<h1 style="background-color:hsl(0, 100%, 50%);">hsl(0, 100%, 50%)</h1>
+<h1 style="background-color:hsl(0, 100%, 75%);">hsl(0, 100%, 75%)</h1>
+<h1 style="background-color:hsl(0, 100%, 90%);">hsl(0, 100%, 90%)</h1>
+<h1 style="background-color:hsl(0, 100%, 100%);">hsl(0, 100%, 100%)</h1>
+
+<p>利用 HSL 颜色，可通过将饱和度设置为 0％，并根据灰色的暗/亮程度调整亮度来制作灰阶。</p>
+<h1 style="background-color:hsl(0, 0%, 0%);">hsl(0, 0%, 0%)</h1>
+<h1 style="background-color:hsl(0, 0%, 24%);">hsl(0, 0%, 24%)</h1>
+<h1 style="background-color:hsl(0, 0%, 47%);">hsl(0, 0%, 47%)</h1>
+<h1 style="background-color:hsl(0, 0%, 71%);">hsl(0, 0%, 71%)</h1>
+<h1 style="background-color:hsl(0, 0%, 94%);">hsl(0, 0%, 94%)</h1>
+<h1 style="background-color:hsl(0, 0%, 100%);">hsl(0, 0%, 100%)</h1>
+
+<p>您可使用 HSLA 颜色值生成透明色。</p>
+<h1 style="background-color:hsla(9, 100%, 64%, 0);">hsla(9, 100%, 64%, 0)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.2);">hsla(9, 100%, 64%, 0.2)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.4);">hsla(9, 100%, 64%, 0.4)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.6);">hsla(9, 100%, 64%, 0.6)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.8);">hsla(9, 100%, 64%, 0.8)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 1);">hsla(9, 100%, 64%, 1)</h1>
+</body>
+</html>

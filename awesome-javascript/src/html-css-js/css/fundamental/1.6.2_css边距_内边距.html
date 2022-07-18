@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+            内边距：
+            所有 CSS 内边距属性
+            属性	        描述
+            padding	        用于在一条声明中设置所有内边距属性的简写属性。
+            padding-bottom	设置元素的下内边距。
+            padding-left	设置元素的左内边距。
+            padding-right	设置元素的右内边距。
+            padding-top	    设置元素的上内边距。
+        */
+    </style>
+    <style>
+        div.t1 {
+            border: 1px solid black;
+            background-color: #6a5acd;
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 80px;
+        }
+    </style>
+    <style>
+        div.t2 {
+            border: 1px solid black;
+            padding: 25px 50px 75px 100px;
+            /*padding: 25px 50px 75px;*/
+            background-color: lightblue;
+        }
+    </style>
+    <style>
+        div.ex1 {
+            width: 300px;
+            background-color: yellow;
+        }
+        div.ex2 {
+            width: 300px;
+            padding: 25px;
+            background-color: lightblue;
+        }
+    </style>
+    <style>
+        div.ex3 {
+            width: 300px;
+            background-color: yellow;
+        }
+        div.ex4 {
+            width: 300px;
+            padding: 25px;
+            box-sizing: border-box;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<h1>使用单独的内边距属性</h1>
+<div class="t1">这个 div 元素的上内边距是 50px，右内边距是 30px，下内边距是 50px，左内边距是 80px。</div>
+<h1>简写的内边距属性 - 4 个值</h1>
+<div class="t2">这个 div 元素的上内边距是 25px，右内边距是 50px，下内边距是 75px，而左内边距是 100px。</div>
+<h1>内边距和元素宽度</h1>
+<div class="ex1">这个 div 是 300 像素宽。</div>
+<br>
+<div class="ex2">这个 div 是 350 像素宽，即使在 CSS 中它被定义为 300 像素。</div>
+
+<h1>内边距和元素宽度 - 设置  box-sizing</h1>
+<div class="ex3">这个 div 是 300 像素宽。</div>
+<br>
+<div class="ex4">div 的宽度保持在 300 像素，尽管总的左右内边距为 50 像素，因为设置了 box-sizing: border-box 属性。</div>
+
+</body>
+</html>
